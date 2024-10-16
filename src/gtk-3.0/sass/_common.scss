@@ -35,13 +35,16 @@ headerbar, .titlebar {
         padding-left: 0px;
         margin: 0;
     }
-    
-    &.close {
-        color: $fg_color;
-        background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/scalable/window-close.svg"))
-        &:hover {
-            color: $hover_fg_color;
-            background-image: -gtk-scaled(url("assets/window-close-hover.png"), url("assets/scalable/window-close-hover.svg"))
+
+    button.titlebutton {
+        &.close {
+            color: $fg_color;
+            background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/scalable/window-close.svg"))
+            &:hover {
+                color: $hover_fg_color;
+                background-image: -gtk-scaled(url("assets/window-close-hover.png"), url("assets/scalable/window-close-hover.svg"))
+            }
         }
     }
+    
 }

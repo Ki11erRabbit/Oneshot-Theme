@@ -40,9 +40,49 @@ headerbar, .titlebar {
         &.close {
             color: $fg_color;
             background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/scalable/window-close.svg"))
+            &:backdrop {
+                color: $insensitive_fg_color;
+                background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/scalable/window-close.svg"))
+            }
             &:hover {
                 color: $hover_fg_color;
                 background-image: -gtk-scaled(url("assets/window-close-hover.png"), url("assets/scalable/window-close-hover.svg"))
+            }
+            &:active {
+                color: $selected_fg_color;
+                background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/scalable/window-close.svg"))
+            }
+        }
+        &.maximize {
+            color: $fg_color;
+            background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
+            &:backdrop {
+                color: $insensitive_fg_color;
+                background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
+            }
+            &:hover {
+                color: $hover_fg_color;
+                background-image: -gtk-scaled(url("assets/window-maximize-hover.png"), url("assets/scalable/window-maximize-hover.svg"))
+            }
+            &:active {
+                color: $selected_fg_color;
+                background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
+            }
+        }
+        &.minimize {
+            color: $fg_color;
+            background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
+            &:backdrop {
+                color: $insensitive_fg_color;
+                background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
+            }
+            &:hover {
+                color: $hover_fg_color;
+                background-image: -gtk-scaled(url("assets/window-minimize-hover.png"), url("assets/scalable/window-minimize-hover.svg"))
+            }
+            &:active {
+                color: $selected_fg_color;
+                background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
             }
         }
     }

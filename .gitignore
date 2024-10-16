@@ -12,3 +12,7 @@ debian/.debhelper/
 debian/files
 debian/mint-themes/
 /usr/
+
+oneshot_theme
+src/gtk-3.0/.sass-cache
+src/gtk-3.0/sass/_colors.scss

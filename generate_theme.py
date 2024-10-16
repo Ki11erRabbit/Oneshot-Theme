@@ -27,6 +27,10 @@ def convert_assets(file, output_dir, color):
     base = colors[color]["base"]
     selected = colors[color]["selected"]
     dark = colors[color]["dark"]
+    if not os.path.exists(f"{output_dir}/assets"):
+        os.makedirs(f"{output_dir}/assets")
+    if not os.path.exists(f"{output_dir}/assets/scalable"):
+        os.makedirs(f"{output_dir}/assets/scalable")
     
     for asset in os.listdir(f"{cwd}/{src_dir}/{file}/assets"):
         if not asset.endswith(".svg"):
@@ -39,21 +43,23 @@ def convert_assets(file, output_dir, color):
         # change colors to match theme
         # Change colors from white to base
         sed_command = ['sed', '-i', f's/rgb(100%, 100%, 100%)/{base}/g', f'{output_dir}/assets/{asset}']
-        proc = subprocess.Popen(sed_command, cwd=f'{output_dir}/{file}/assets')
+        proc = subprocess.Popen(sed_command, cwd=f'{output_dir}/assets')
         proc.wait()
         # Change colors from light grey to selected
         sed_command = ['sed', '-i', f's/rgb(90.196078%, 90.196078%, 90.196078%)/{selected}/g', f'{output_dir}/assets/{asset}']
-        proc = subprocess.Popen(sed_command, cwd=f'{output_dir}/{file}/assets')
+        proc = subprocess.Popen(sed_command, cwd=f'{output_dir}/assets')
         proc.wait()
         # Change colors from dark grey to dark
         sed_command = ['sed', '-i', f's/rgb(50.196078%, 50.196078%, 50.196078%)/{dark}/g', f'{output_dir}/assets/{asset}']
         proc = subprocess.Popen(sed_command, cwd=f'{output_dir}/assets')
         proc.wait()
         
-        asset_name = os.path.splittext(asset)
+        asset_name = os.path.splitext(asset)[0]
 
         png_convert = ['rsvg-convert', '-a', '-w', '512', '-f', 'png', '-o', f'{output_dir}/assets/{asset_name}.png', f'{output_dir}/assets/{asset}']
-        os.move(f'{output_dir}/assets/{asset}', f'{output_dir}/assets/scalable/{asset}')
+        proc = subprocess.Popen(png_convert)
+        proc.wait()
+        os.rename(f'{output_dir}/assets/{asset}', f'{output_dir}/assets/scalable/{asset}')
 
 
 def generate_colors_stylesheet(file, color):
@@ -64,14 +70,16 @@ def generate_colors_stylesheet(file, color):
     stylesheet_path = f"{cwd}/{src_dir}/{file}/sass/_colors.scss"
 
     with open(stylesheet_path, 'w') as file:
-        file.write(f"$base_color: {base}\n$selected_color: {selected}\n$dark_color: {dark}\n")
+        file.write(f"$base_color: {base}\n$selected_color: {selected}\n$dark_color: {dark}\n$black_color: #000000\n")
     
 
 def output_file(file, color):
-    output_dir = f"{cwd}/{output_dir}/{file}"
-    convert_assets(file, output_dir, color)
+    out_dir = f"{cwd}/{output_dir}/{file}"
+    if not os.path.exists(out_dir):
+        os.makedirs(out_dir)
+    convert_assets(file, out_dir, color)
     generate_colors_stylesheet(file, color)
-    program = [f'{cwd}/{file}/{parse-sass.sh}', f'{output_dir}/gtk.css']
+    program = [f'{cwd}/{src_dir}/{file}/parse-sass.sh', f'{out_dir}/gtk.css']
     proc = subprocess.Popen(program)
     proc.wait()
 
@@ -85,13 +93,13 @@ def main(color):
         color = "user"
     
     for file in os.listdir(src_dir):
-        if "gtk" in file:
+        if file == 'gtk-3.0': #or file == 'gtk-4.0':
             output_file(file, color)
     
 
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Generate oneshot themes')
     parser.add_argument('-c','--color', type=str, help='Color of the theme. Set to "user" and set the other color options to use a custom color', default='purple')
     parser.add_argument('-cb','--color-base', type=str, help='Base Color of the theme', default=None)

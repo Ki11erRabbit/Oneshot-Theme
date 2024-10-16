@@ -93,6 +93,20 @@ def output_file(file, color):
     proc = subprocess.Popen(program)
     proc.wait()
 
+def create_index_theme(color):
+    with open(f"{cwd}/{output_dir}/index.theme", 'w') as file:
+        file.write(f"""[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Oneshot Theme {color.capitalize()}
+Comment=A Linux theme inspired by the UI in Oneshot: World Machine Edition
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Oneshot-{color}
+MetacityTheme=Oneshot-{color}
+IconTheme=oneshot_icons
+CursorTheme=oneshot_icons
+""")
 
 def main(color):
     if color == "user":
@@ -106,6 +120,7 @@ def main(color):
         if file == 'gtk-3.0': #or file == 'gtk-4.0':
             output_file(file, color)
     
+    create_index_theme(color)
 
 
 

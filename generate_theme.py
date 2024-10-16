@@ -117,6 +117,6 @@ if __name__ == "__main__":
     parser.add_argument('-csf','--color-selection-fill', type=str, help='Selection Fill Color of the theme', default=None)
     parser.add_argument('-csb','--color-selection-border', type=str, help='Selection Border Color of the theme', default=None)
     parser.add_argument('-cshf','--color-selection-hover-fill', type=str, help='Selection Hover Fill Color of the theme', default=None)
-    parser.add_argument('-cshb','--color-selection-hover-border', type=str, help='Selection Hover Border Color of the theme',
+    parser.add_argument('-cshb','--color-selection-hover-border', type=str, help='Selection Hover Border Color of the theme', default=None)
     args = parser.parse_args()
     main(args.color)

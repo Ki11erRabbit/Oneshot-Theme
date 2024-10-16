@@ -59,12 +59,20 @@ headerbar, .titlebar {
         margin: 0;
     }
     @extend.image-button;
-    @include button(undecorated);
+    border-color: $fg_color;
+    background-color: $bg_color;
+    background-image: none;
     &:hover {
-        @include button(header-hover)
+        color: $fg_color;
+        background-color: $bg_color;
+        outline-color: $fg_color;
+        border-color: $fg_color;
     }
     &:active, &:checked {
-        @include button(header-active)
+        color: $fg_color;
+        background-color: $bg_color;
+        outline-color: $fg_color;
+        border-color: $fg_color;
     }
 
     button.titlebutton {

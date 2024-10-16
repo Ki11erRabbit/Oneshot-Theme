@@ -81,23 +81,23 @@ headerbar, .titlebar {
         min-width: 20px;
         min-height: 20px;
         &.close, &.minimize, &.maximize {
-            -gtk-icon-theme: "oneshot_icons";
+            //-gtk-icon-theme: "oneshot_icons";
         }
         &.close {
             color: $bg_color;
             background-color: $bg_color;
-            background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/scalable/window-close.svg"))
+            background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
             &:backdrop {
                 color: $bg_color;
-                background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/scalable/window-close.svg"))
+                background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
             }
             &:hover {
                 color: $bg_color;
-                background-image: -gtk-scaled(url("assets/window-close-hover.png"), url("assets/scalable/window-close-hover.svg"))
+                background-image: -gtk-scaled(url("assets/window-close-hover.png"), url("assets/window-close-hover.png"))
             }
             &:active {
                 color: $bg_color;
-                background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/scalable/window-close.svg"))
+                background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
             }
         }
         &.maximize {

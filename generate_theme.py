@@ -73,13 +73,13 @@ def generate_colors_stylesheet(file, color):
     stylesheet_path = f"{cwd}/{src_dir}/{file}/sass/_colors.scss"
 
     with open(stylesheet_path, 'w') as file:
-        file.write(f"""$fg_color: {base}
-$bg_color: #000000
-$hover_fg_color: {base_hover}
-$insensitive_fg_color: {selection_hover_border}
-$insensitive_bg_color: {selection_hover_fill}
-$selected_fg_color: {selection_border}
-$selected_bg_color: {selection_fill}
+        file.write(f"""$fg_color: {base};
+$bg_color: #000000;
+$hover_fg_color: {base_hover};
+$insensitive_fg_color: {selection_hover_border};
+$insensitive_bg_color: {selection_hover_fill};
+$selected_fg_color: {selection_border};
+$selected_bg_color: {selection_fill};
 """)
     
 

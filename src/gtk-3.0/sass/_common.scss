@@ -58,7 +58,9 @@ headerbar, .titlebar {
         padding-left: 0px;
         margin: 0;
     }
-    @extend.image-button;
+    min-width: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
     border-color: $fg_color;
     background-color: $bg_color;
     background-image: none;

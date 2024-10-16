@@ -81,10 +81,10 @@ headerbar, .titlebar {
         min-width: 20px;
         min-height: 20px;
         &.close, &.minimize, &.maximize {
-            -gtk-icon-theme: "oneshot_icons";
+            //-gtk-icon-theme: "oneshot_icons";
         }
         &.close {
-            color: $fg_color;
+            color: $bg_color;
             background-color: $bg_color;
             background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/scalable/window-close.svg"))
             &:backdrop {
@@ -101,7 +101,7 @@ headerbar, .titlebar {
             }
         }
         &.maximize {
-            color: $fg_color;
+            color: $bg_color;
             background-color: $bg_color;
             background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
             &:backdrop {
@@ -118,7 +118,7 @@ headerbar, .titlebar {
             }
         }
         &.minimize {
-            color: $fg_color;
+            color: $bg_color;
             background-color: $bg_color;
             background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
             &:backdrop {

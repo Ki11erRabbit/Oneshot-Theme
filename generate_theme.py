@@ -70,7 +70,7 @@ def generate_colors_stylesheet(file, color):
     stylesheet_path = f"{cwd}/{src_dir}/{file}/sass/_colors.scss"
 
     with open(stylesheet_path, 'w') as file:
-        file.write(f"$base_color: {base}\n$selected_color: {selected}\n$dark_color: {dark}\n$bg_color: #000000\n")
+        file.write(f"$fg_color: {base}\n$selected_fg_color: {selected}\n$insensitive_fg_color: {dark}\n$bg_color: #000000\n")
     
 
 def output_file(file, color):

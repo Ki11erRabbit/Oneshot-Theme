@@ -81,22 +81,22 @@ headerbar, .titlebar {
         min-width: 20px;
         min-height: 20px;
         &.close, &.minimize, &.maximize {
-            //-gtk-icon-theme: "oneshot_icons";
+            -gtk-icon-theme: "oneshot_icons";
         }
         &.close {
             color: $bg_color;
             background-color: $bg_color;
             background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/scalable/window-close.svg"))
             &:backdrop {
-                color: $insensitive_fg_color;
+                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/scalable/window-close.svg"))
             }
             &:hover {
-                color: $hover_fg_color;
+                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-close-hover.png"), url("assets/scalable/window-close-hover.svg"))
             }
             &:active {
-                color: $selected_fg_color;
+                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/scalable/window-close.svg"))
             }
         }
@@ -105,15 +105,15 @@ headerbar, .titlebar {
             background-color: $bg_color;
             background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
             &:backdrop {
-                color: $insensitive_fg_color;
+                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
             }
             &:hover {
-                color: $hover_fg_color;
+                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-maximize-hover.png"), url("assets/scalable/window-maximize-hover.svg"))
             }
             &:active {
-                color: $selected_fg_color;
+                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
             }
         }
@@ -122,15 +122,15 @@ headerbar, .titlebar {
             background-color: $bg_color;
             background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
             &:backdrop {
-                color: $insensitive_fg_color;
+                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
             }
             &:hover {
-                color: $hover_fg_color;
+                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-minimize-hover.png"), url("assets/scalable/window-minimize-hover.svg"))
             }
             &:active {
-                color: $selected_fg_color;
+                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
             }
         }

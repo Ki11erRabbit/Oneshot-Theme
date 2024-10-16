@@ -68,3 +68,10 @@ $header_bg: $bg_color;
 
 @define-color header_fg #{"" + $header_fg};
 @define-color header_bg #{"" + $header_bg};
+
+$header_button_border: $fg_color;
+$header_button_bg: $bg_color;
+
+@define-color header_button_border #{"" + $header_button_border};
+@define-color header_button_bg #{"" + $header_button_bg};
+

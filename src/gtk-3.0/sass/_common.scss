@@ -1,0 +1,47 @@
+
+.background {
+    color: $fg_color;
+    background: $bg_color;
+}
+
+
+
+
+
+decoration {
+    border-radius: calc(1 * (var(--current-viewport-width) / 16)) calc(1 * (var(--current-viewport-width) / 16)) 0 0;
+    border-width: calc(1 * (var(--current-viewport-width) / 16));
+
+    margin: 10px;
+    
+    .fullscreen &, .maximized & {
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .solid-csd & {
+        border-radius: 0;
+        margin: 0;
+        background-color: $bg_color;
+        box-shadow: none;
+    }
+}
+
+headerbar, .titlebar {
+    &.default-decoration button.titlebutton { // no vertical padding for ssd buttons
+        padding-top: 0px;                       // already handled by the titlebar-padding
+        padding-bottom: 0px;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin: 0;
+    }
+    
+    &.close {
+        color: $fg_color;
+        background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/scalable/window-close.svg"))
+        &:hover {
+            color: $hover_fg_color;
+            background-image: -gtk-scaled(url("assets/window-close-hover.png"), url("assets/scalable/window-close-hover.svg"))
+        }
+    }
+}

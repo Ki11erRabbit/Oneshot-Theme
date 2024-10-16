@@ -64,18 +64,6 @@ headerbar, .titlebar {
     border-color: $fg_color;
     background-color: $bg_color;
     background-image: none;
-    &:hover {
-        color: $fg_color;
-        background-color: $bg_color;
-        outline-color: $fg_color;
-        border-color: $fg_color;
-    }
-    &:active, &:checked {
-        color: $fg_color;
-        background-color: $bg_color;
-        outline-color: $fg_color;
-        border-color: $fg_color;
-    }
 
     button.titlebutton {
         min-width: 20px;
@@ -95,6 +83,9 @@ headerbar, .titlebar {
             background-position: center;
             background-repeat: no-repeat;
             background-size: 16px 16px;
+            &:backdrop {
+                opacity: 1;
+            }
         }
         &.close {
             color: $bg_color;

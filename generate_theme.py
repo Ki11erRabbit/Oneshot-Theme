@@ -90,7 +90,7 @@ def output_file(file, color):
     convert_assets(file, out_dir, color)
     generate_colors_stylesheet(file, color)
     program = [f'{cwd}/{src_dir}/{file}/parse-sass.sh', f'{out_dir}/gtk.css']
-    proc = subprocess.Popen(program)
+    proc = subprocess.Popen(program, cwd=f'{cwd}/{src_dir}/{file}')
     proc.wait()
 
 def create_index_theme(color):

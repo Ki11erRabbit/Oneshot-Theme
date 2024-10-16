@@ -82,6 +82,13 @@ headerbar, .titlebar {
         min-height: 20px;
         &.close, &.minimize, &.maximize {
             //-gtk-icon-theme: "oneshot_icons";
+            min-width: 16px;
+            min-height: 16px;
+            margin: 0;
+            padding: 0;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 16px 16px;
         }
         &.close {
             color: $bg_color;
@@ -90,6 +97,10 @@ headerbar, .titlebar {
             &:backdrop {
                 color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
+            }
+            &:backdrop:hover {
+                color: $bg_color;
+                background-image: -gtk-scaled(url("assets/window-close-hover.png"), url("assets/window-close-hover.png"))
             }
             &:hover {
                 color: $bg_color;

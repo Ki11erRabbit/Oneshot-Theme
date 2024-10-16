@@ -63,3 +63,8 @@ $wm_bg_unfocused: $bg_color;
 @define-color wm_icon_hover_bg #{"" + $bg_color};
 @define-color wm_icon_active_bg #{"" + $bg_color};
 
+$header_fg: $fg_color;
+$header_bg: $bg_color;
+
+@define-color header_fg #{"" + $header_fg};
+@define-color header_bg #{"" + $header_bg};

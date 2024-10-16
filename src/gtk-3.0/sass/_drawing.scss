@@ -41,7 +41,7 @@
   // focused entry
   //
     color: $text_color;
-    border-color: if($variant=='light', $selected_bg_color, $button_border);
+    border-color: $button_border;
     background-color: $entry_bg;
 
     @if $variant == 'dark' {
@@ -210,7 +210,7 @@
   //
     color: $header_fg;
     outline-color: transparentize($header_fg, 0.7);
-    border-color: if($variant=='light', $header_button_border, $header_button_border);
+    border-color: $header_button_border;
     background-color: $button_active_bg;
   }
 

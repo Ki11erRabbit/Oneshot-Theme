@@ -3,7 +3,14 @@
 }
 
 $ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-$asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark variant
+// TODO: possibly change this to something more sensible
+$warning_color: $bg_color;
+$warning_fg_color: $fg_color;
+$error_color: $bg_color;
+$error_fg_color: $fg_color;
+$drop_target_color: $selected_bg_color;
+$suggested_color: $fg_color;
+$destructive_color: $insensitive_fg_color;
 
 * {
   background-clip: padding-box;
@@ -51,19 +58,19 @@ $asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark var
     color: $fg_color;
   }
   &:disabled {
-    background-color: $insensitive_bg_color;
+    background-color: $bg_color;
     color: $insensitive_fg_color;
   }
   &:selected {
-    background-color: $selected_bg_color;
+    background-color: $bg_color;
     color: $selected_fg_color;
   }
 }
 
 .view,
 %view {
-  color: $text_color;
-  background-color: $base_color;
+  color: $fg_color;
+  background-color: $bg_color;
 
   &:selected {
     &, &:focus {
@@ -82,14 +89,14 @@ textview {
   }
 }
 
-textview border { background-color: mix($bg_color, $base_color, 50%); }
+textview border { background-color: $fg_color; }//mix($bg_color, $base_color, 50%); }
 
 iconview { @extend .view; }
 
 rubberband,
 .rubberband {
   border: 1px solid darken($selected_bg_color, 10%);
-  background-color: transparentize(darken($selected_bg_color, 10%), 0.8);
+  background-color: transparentize(darken($bg_color, 10%), 0.8);
 }
 
 flowbox {
@@ -121,7 +128,7 @@ label {
 
   selection {
     color: $selected_fg_color;
-    background-color: $selected_bg_color;
+    background-color: $bg_color;
   }
 
   &:disabled {
@@ -132,15 +139,15 @@ label {
 }
 
 .dim-label {
-  color: $dim_label_fg_color;
+  color: $fg_color;
 }
 
 assistant {
   .sidebar {
-    background-color: $base_color;
-    border-top: 1px solid $borders_color;
-    &:dir(ltr) { border-right: 1px solid $borders_color; }
-    &:dir(rtl) { border-left: 1px solid $borders_color; }
+    background-color: $bg_color;
+    border-top: 1px solid $fg_color;
+    &:dir(ltr) { border-right: 1px solid $fg_color; }
+    &:dir(rtl) { border-left: 1px solid $fg_color; }
   }
 
   &.csd .sidebar { border-top-style: none; }
@@ -148,20 +155,20 @@ assistant {
   .sidebar label { padding: 6px 12px; }
 
   .sidebar label.highlight {
-    background-color: $selected_bg_color;
+    background-color: $bg_color;
     color: $selected_fg_color;
   }
 }
 
 textview { // This will get overridden by .view, needed by gedit line numbers and the mintupdate package description
-  background-color: mix($bg_color, $base_color, 50%);
-  color: $text_color;
+  background-color: $bg_color;//mix($bg_color, $base_color, 50%);
+  color: $fg_color;
 }
 
 %osd, .osd {
-  color: $osd_fg_color;
+  color: $fg_color;
   border: none;
-  background-color: $osd_bg_color;
+  background-color: $bg_color;
   background-clip: padding-box;
   box-shadow: none;
 }
@@ -205,7 +212,7 @@ entry {
   @include entry(normal);
 
   image { // icons inside the entry
-    color: mix($fg_color,$base_color, 80%);
+    color: $fg_color;//mix($fg_color,$base_color, 80%);
 
     &.left {
       padding-left: 0;
@@ -241,8 +248,8 @@ entry {
                                           (search-missing, $error_color, $error_fg_color) {
     &.#{$e_type} {
       color: $e_fg_color;
-      border-color: if($variant=='light', $e_color, $entry_border);
-      background-color: mix($e_color, $base_color, 60%);
+      border-color: $e_color;
+      background-color: $bg_color; //mix($e_color, $base_color, 60%);
 
       image { color: $e_fg_color; }
 
@@ -272,7 +279,7 @@ entry {
 
     selection {
       &:focus, & {
-        color: $selected_bg_color;
+        color: $bg_color;
         background-color: $selected_fg_color;
       }
     }
@@ -282,7 +289,7 @@ entry {
     margin: 0 -6px;
     border-radius: 0;
     border-width: 0 0 2px;
-    border-color: $selected_bg_color;
+    border-color: $bg_color;
     border-style: solid;
     background-image: none;
     background-color: transparent;
@@ -303,7 +310,7 @@ treeview entry {
     background-image: none;
     background-color: $base_color;
 
-    &:focus { border-color: $selected_bg_color; }
+    &:focus { border-color: $bg_color; }
   }
 }
 
@@ -369,7 +376,7 @@ button {
   &:active, &:checked {
     @include button(active);
 
-    background-clip: if($variant=='light', border-box, padding-box);
+    background-clip: border-box;
     transition-duration: 50ms;
 
     &:not(:disabled) label:disabled { color: inherit; opacity: 0.6; }
@@ -428,10 +435,10 @@ button {
 
   // big standalone buttons like in Documents pager
   &.osd {
-    color: $osd_fg_color;
-    outline-color: transparentize($osd_fg_color, 0.7);
-    background-color: $osd_bg_color;
-    border-color: darken($osd_bg_color, 8%);
+    color: $fg_color;
+    outline-color: transparentize($fg_color, 0.7);
+    background-color: $bg_color;
+    border-color: darken($bg_color, 8%);
 
     &.image-button {
       padding: 0;
@@ -678,8 +685,8 @@ modelbutton.flat {
 
   @extend %undecorated_button;
 
-  &:hover { background-color: $menu_selected_bg_color; }
-  &:active, &:selected { &, arrow { background-color: $menu_selected_bg_color; } }
+  &:hover { background-color: $bg_color; }
+  &:active, &:selected { &, arrow { background-color: $bg_color; } }
   &:checked { color: $fg_color; }
 
   // FIXME: temporary workaround
@@ -700,19 +707,19 @@ modelbutton.flat arrow {
 //
 %link,
 *:link {
-  color: $link_color;
+  color: $fg_color;
 
   &:visited {
     color: $link_visited_color;
-    *:selected & { color: mix($selected_fg_color, $selected_bg_color, 60%); }
+    *:selected & { color: $selected_fg_color, $bg_color, 60%); }
   }
   &:hover {
     color: lighten($link_color,10%);
-    *:selected & { color: mix($selected_fg_color, $selected_bg_color, 90%); }
+    *:selected & { color: mix($selected_fg_color, $bg_color, 90%); }
   }
   &:active {
     color: $link_color;
-    *:selected & { color: mix($selected_fg_color, $selected_bg_color, 80%); }
+    *:selected & { color: mix($selected_fg_color, $bg_color, 80%); }
   }
 
   @at-root %link_selected,
@@ -763,7 +770,7 @@ spinbutton {
     > button.up:dir(rtl):hover:not(:active),
     > entry + button:not(:active):hover { box-shadow: none; }
 
-    > entry:focus + button { border-left-color: if($variant=='light', $selected_bg_color, $entry_border); }
+    > entry:focus + button { border-left-color: $bg_color; }
 
     > entry:drop(active) + button { border-left-color: $drop_target_color; }
 
@@ -790,7 +797,7 @@ spinbutton {
 
     button.up { border-radius: 3px 3px 0 0; }
 
-    > entry:focus + button { border-top-color: if($variant=='light', $selected_bg_color, $entry_border); }
+    > entry:focus + button { border-top-color: $bg_color; }
 
     > entry:drop(active) + button { border-top-color: $drop_target_color; }
   }
@@ -844,7 +851,7 @@ toolbar {
     padding: 7px;
     border: 1px solid transparentize(black, 0.5);
     border-radius: 3px;
-    background-color: transparentize($osd_bg_color, 0.1);
+    background-color: transparentize($bg_color, 0.1);
 
     &.left,
     &.right,
@@ -873,13 +880,13 @@ toolbar {
 
 .primary-toolbar toolbar,
 .primary-toolbar:not(.libreoffice-toolbar) {  // LO messes up the toolbar styling, so exclude LO toolbars
-  color: $header_fg;
-  background-color: opacify($header_bg, 1);
+  color: $fg_color;
+  background-color: opacify($bg_color, 1);
   box-shadow: none;
   border-width: 0 0 1px 0;
   border-style: solid;
   border-image: linear-gradient(to bottom, opacify($header_bg, 1),
-                                           darken($header_bg, 12%)) 1 0 1 0; //temporary hack for rhythmbox 3.1
+                                           darken($bg_color, 12%)) 1 0 1 0; //temporary hack for rhythmbox 3.1
 
   separator { @extend %header_separator; }
 }
@@ -891,7 +898,7 @@ toolbar {
   @extend toolbar;
   background-color: darken($bg_color, 3%);
   border-style: solid;
-  border-color: $borders_color;
+  border-color: $fg_color;
   border-width: 0 1px 1px;
   padding: 3px;
   border-radius: 0  0 3px 3px;
@@ -900,7 +907,7 @@ toolbar {
 searchbar {
   background-color: $bg_color;
   border-style: solid;
-  border-color: $borders_color;
+  border-color: $fg_color;
   border-width: 0 0 1px;
   padding: 3px;
   //box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
@@ -908,7 +915,7 @@ searchbar {
 
 actionbar {
   padding: 6px;
-  border-top: 1px solid $borders_color;
+  border-top: 1px solid $fg_color;
   background-color: darken($bg_color, 3%)
 }
 
@@ -923,19 +930,19 @@ headerbar,
   border-width: 0 0 1px;
   border-style: solid;
   border-radius: 0;
-  border-color: opacify($header_border, 1);
+  border-color: opacify($fg_color, 1);
 
-  color: $header_fg;
-  background-color: opacify($header_bg, 1);
+  color: $fg_color;
+  background-color: opacify($bg_color, 1);
   box-shadow: inset 0 1px $header_highlight;
 
   .csd & {  // Transparent header-bars only in csd windows
-    background-color: $header_bg;
-    border-color: $header_border;
+    background-color: $bg_color;
+    border-color: $fg_color;
   }
 
   &:backdrop {
-    color: transparentize($header_fg, 0.4);
+    color: transparentize($fg_color, 0.4);
   }
 
   .title {
@@ -953,12 +960,12 @@ headerbar,
   // Selectionmode
   &.selection-mode {
     color: $selected_fg_color;
-    background-color: $selection_mode_bg;
-    border-color: darken($selection_mode_bg, 4%);
+    background-color: $bg_color;
+    border-color: darken($bg_color, 4%);
     box-shadow: none;
 
     &:backdrop {
-      background-color: $selection_mode_bg;
+      background-color: $bg_color;
       color: transparentize($selected_fg_color, 0.4);
     }
 
@@ -1106,7 +1113,7 @@ headerbar {
     }
   }
 
-  > separator { background-image: _solid($header_border); }
+  > separator { background-image: _solid($fg_color); }
 
   @extend %titlebar;
 }
@@ -1116,10 +1123,10 @@ headerbar {
   min-height: 1px;
   border-width: 0 1px;
   border-image: linear-gradient(to bottom,
-                                transparentize($header_fg, 1) 25%,
-                                transparentize($header_fg, 0.65) 25%,
-                                transparentize($header_fg, 0.65) 75%,
-                                transparentize($header_fg, 1) 75%) 0 1/0 1px stretch;
+                                transparentize($fg_color, 1) 25%,
+                                transparentize($fg_color, 0.65) 25%,
+                                transparentize($fg_color, 0.65) 75%,
+                                transparentize($fg_color, 1) 75%) 0 1/0 1px stretch;
 
   &:backdrop { opacity: 0.6; }
 }
@@ -1135,12 +1142,12 @@ headerbar {
       @include entry(header-focus);
       background-clip: if($variant=='light', border-box, padding-box);
 
-      image { color: transparentize($header_fg, 0.15); }
+      image { color: transparentize($fg_color, 0.15); }
     }
     &:disabled { @include entry(header-insensitive); }
 
     selection:focus {
-      background-color: $selected_bg_color;
+      background-color: $bg_color;
       color: $selected_fg_color;
     }
 
@@ -1154,8 +1161,8 @@ headerbar {
                                             (error, $error_color, $error_fg_color) {
       &.#{$e_type} {
         color: $e_fg_color;
-        border-color: if($variant=='light', $e_color, $header_entry_border);
-        background-color: mix($e_color, $header_bg, 60%);
+        border-color: $e_color;
+        background-color: mix($e_color, $bg_color, 60%);
 
         &:focus {
           color: $e_fg_color;

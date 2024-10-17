@@ -32,9 +32,10 @@
 
 
 decoration {
-    border-radius: calc(1 * (var(--current-viewport-width) / 16)) calc(1 * (var(--current-viewport-width) / 16)) 0 0;
-    border-width: calc(1 * (var(--current-viewport-width) / 16));
-
+    border-radius: 1px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $fg_color;
     margin: 10px;
     
     .fullscreen &, .maximized & {
@@ -58,6 +59,8 @@ headerbar, .titlebar {
         padding-left: 0px;
         margin: 0;
     }
+    border-color: $fg_color;
+    border: 1px solid $fg_color;
     min-width: 24px;
     padding-left: 10px;
     padding-right: 10px;

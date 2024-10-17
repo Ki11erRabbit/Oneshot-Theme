@@ -107,6 +107,9 @@ headerbar, .titlebar {
         }
         &.maximize {
             background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
+            &:focus {
+                background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
+            }
             &:backdrop {
                 background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
             }
@@ -119,6 +122,9 @@ headerbar, .titlebar {
         }
         &.minimize {
             background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
+            &:focus {
+                background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
+            }
             &:backdrop {
                 background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
             }

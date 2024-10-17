@@ -87,7 +87,15 @@ headerbar, .titlebar {
                 opacity: 1;
             }
         }
-        &.close {
+        @each $k in ('close', 'maximize', 'minimize') {
+          @each $l, $m in ('',''), (':backdrop',''), (':backdrop:hover',''), (':hover','-hover'), (':active','') {
+            &.#{$k}#{$l} {
+              background-image: -gtk-scaled(url('assets/window-#{$k}#{$m}.png'),
+                                            url('assets/window-#{$k}#{$m}.png'));
+            }
+          }
+        }
+        /*&.close {
             background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
             & {
                 background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
@@ -152,7 +160,7 @@ headerbar, .titlebar {
             &:active {
                 background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
             }
-        }
+        }*/
     }
     
 }

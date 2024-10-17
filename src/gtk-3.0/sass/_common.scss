@@ -92,6 +92,9 @@ headerbar, .titlebar {
             & {
                 background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
             }
+            &:checked {
+                background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
+            }
             &:focus {
                 background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
             }
@@ -113,6 +116,9 @@ headerbar, .titlebar {
             & {
                 background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
             }
+            &:checked {
+                background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
+            }
             &:focus {
                 background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
             }
@@ -129,6 +135,9 @@ headerbar, .titlebar {
         &.minimize {
             background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
             & {
+                background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
+            }
+            &:checked {
                 background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
             }
             &:focus {

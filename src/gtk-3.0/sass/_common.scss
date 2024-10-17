@@ -199,8 +199,11 @@ scrollbar {
 
     background-color: $bg_color;
     border: 1px solid $fg_color;
+    padding: 1px;
 
     &.vertical button {
+        min-height: 16px;
+        min-width: 16px;
         color: transparent;
         background-color: transparent;
         background-position: center;
@@ -224,6 +227,8 @@ scrollbar {
     }
 
     &.horizontal button {
+        min-height: 16px;
+        min-width: 16px;
         color: transparent;
         background-color: transparent;
         background-position: center;
@@ -242,6 +247,21 @@ scrollbar {
         }
         &.down:hover {
             background-image: -gtk-scaled(url('assets/pan-right-hover.png'));
+        }
+    }
+    slider {
+        min-height: 16px;
+        min-width: 16px;
+        border-radius: 0px;
+        box-shadow: none;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        color: transparent;
+        background-color: transparent;
+        background-image: -gtk-scaled(url('assets/slider.png'));
+        &:hover {
+            background-image: -gtk-scaled(url('assets/slider-hover.png'));
         }
     }
 }

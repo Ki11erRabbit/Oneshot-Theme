@@ -82,14 +82,12 @@ headerbar, .titlebar {
             padding: 0;
             background-position: center;
             background-repeat: no-repeat;
-            background-size: 16px 16px;
+            background-size: 32px 32px;
             &:backdrop {
                 opacity: 1;
             }
         }
         &.close {
-            color: $bg_color;
-            background-color: $bg_color;
             background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
             &:focus {
                 background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
@@ -108,36 +106,26 @@ headerbar, .titlebar {
             }
         }
         &.maximize {
-            color: $bg_color;
-            background-color: $bg_color;
             background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
             &:backdrop {
-                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
             }
             &:hover {
-                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-maximize-hover.png"), url("assets/scalable/window-maximize-hover.svg"))
             }
             &:active {
-                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
             }
         }
         &.minimize {
-            color: $bg_color;
-            background-color: $bg_color;
             background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
             &:backdrop {
-                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
             }
             &:hover {
-                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-minimize-hover.png"), url("assets/scalable/window-minimize-hover.svg"))
             }
             &:active {
-                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
             }
         }

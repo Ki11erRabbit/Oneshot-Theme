@@ -57,6 +57,7 @@ button {
     &:hover label {
         background-color: $bg_color;
         color: $fg_color;
+        margin: 0;
     }
     &:active, &:checked {
         background-color: $hover_fg_color;
@@ -149,6 +150,44 @@ check, radio {
         }
     }
 }
+
+//
+// Switches
+//
+swtich {
+    min-height: 16px;
+    min-width: 32px;
+    background-size: 32px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    slider {
+        min-width: 1px;
+        min-height: 1px;
+    }
+
+    &, slider {
+        outline-color: transparent;
+        color: transparent;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+@each $k,$l in ('',''), (':checked', '-active'), (':disabled', '-insensitive'), ('checked:disabled', '-active-insensitive') {
+
+    switch#{$k} {
+        background-image: -gtk-scaled(url("assets/switch#{$l}.png"));
+    }
+
+    menuitem:hover switch#{$k},
+    row:selected switch#{$k},
+    infobar switch#{$k} {
+        background-image: -gtk-scaled(url("assets/switch#{$l}-selected.png"));
+    }
+}
+
+
 
 //
 // Window Decorations

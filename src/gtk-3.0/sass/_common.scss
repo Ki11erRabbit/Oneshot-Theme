@@ -88,79 +88,13 @@ headerbar, .titlebar {
             }
         }
         @each $k in ('close', 'maximize', 'minimize') {
-          @each $l, $m in ('',''), (':backdrop',''), (':backdrop:hover',''), (':hover','-hover'), (':active','') {
+          @each $l, $m in ('',''), (':backdrop',''), (':backdrop:hover','-hover'), (':hover','-hover'), (':active','') {
             &.#{$k}#{$l} {
               background-image: -gtk-scaled(url('assets/window-#{$k}#{$m}.png'),
                                             url('assets/window-#{$k}#{$m}.png'));
             }
           }
         }
-        /*&.close {
-            background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
-            & {
-                background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
-            }
-            &:checked {
-                background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
-            }
-            &:focus {
-                background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
-            }
-            &:backdrop {
-                background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
-            }
-            &:backdrop:hover {
-                background-image: -gtk-scaled(url("assets/window-close-hover.png"), url("assets/window-close-hover.png"))
-            }
-            &:hover {
-                background-image: -gtk-scaled(url("assets/window-close-hover.png"), url("assets/window-close-hover.png"))
-            }
-            &:active {
-                background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
-            }
-        }
-        &.maximize {
-            background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
-            & {
-                background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
-            }
-            &:checked {
-                background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
-            }
-            &:focus {
-                background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
-            }
-            &:backdrop {
-                background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
-            }
-            &:hover {
-                background-image: -gtk-scaled(url("assets/window-maximize-hover.png"), url("assets/scalable/window-maximize-hover.svg"))
-            }
-            &:active {
-                background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
-            }
-        }
-        &.minimize {
-            background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
-            & {
-                background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
-            }
-            &:checked {
-                background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
-            }
-            &:focus {
-                background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
-            }
-            &:backdrop {
-                background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
-            }
-            &:hover {
-                background-image: -gtk-scaled(url("assets/window-minimize-hover.png"), url("assets/scalable/window-minimize-hover.svg"))
-            }
-            &:active {
-                background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
-            }
-        }*/
     }
     
 }

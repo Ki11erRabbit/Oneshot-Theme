@@ -197,8 +197,53 @@ decoration {
     border-width: 1px;
     border-style: solid;
     border-color: $fg_color;
+    bx-shadow: none;
     
+    // cursor resize area
+    margin: 10px
+    
+    &:backdrop {
+        border-color: $fg_color;
+    }
+    
+    .tiled &,
+    .tiled-top &,
+    .tiled-left &,
+    .tiled-right &,
+    .tiled-bottom & {
+        border-radius: 0;
+        box-shadow: none;
+        &:backdrop {
+            border-color: $fg_color;
+            box-shadow: none;
+        }
+    }
+
     .fullscreen &, .maximized & {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .popup & {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    // server side decorations
+    .ssd & {
+        border-radius: 0;
+        &, &.backdrop {
+            border-color: $fg_color;
+            background-color: $bg_color;
+        }
+
+        &.maximized, &.tiled {
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
+
+    .csd.popup & {
         border-radius: 0;
         box-shadow: none;
     }
@@ -206,7 +251,6 @@ decoration {
     .solid-csd & {
         border-radius: 0;
         background-color: $bg_color;
-        box-shadow: none;
     }
 }
 
@@ -238,7 +282,6 @@ headerbar, .titlebar {
         min-width: 20px;
         min-height: 20px;
         &.close, &.minimize, &.maximize {
-            //-gtk-icon-theme: "oneshot_icons";
             &, &:hover, &:focus, &:active, &:backdrop {
                 border-color: transparent;
                 background-color: transparent;
@@ -257,12 +300,22 @@ headerbar, .titlebar {
             }
         }
         @each $k in ('close', 'maximize', 'minimize') {
-          @each $l, $m in ('',''), (':backdrop',''), (':backdrop:hover','-hover'), (':hover','-hover'), (':active','') {
-            &.#{$k}#{$l} {
-              background-image: -gtk-scaled(url('assets/window-#{$k}#{$m}.png'),
+            @each $l, $m in ('',''), (':backdrop',''), (':backdrop:hover','-hover'), (':hover','-hover'), (':active','') {
+                &.#{$k}#{$l} {
+                    background-image: -gtk-scaled(url('assets/window-#{$k}#{$m}.png'),
                                             url('assets/window-#{$k}#{$m}.png'));
+                }
             }
-          }
+        }
+
+        .fullscreen &,
+        .maximized & {
+            @each $l, $m in ('',''), (':backdrop',''), (':backdrop:hover','-hover'), (':hover','-hover'), (':active','') {
+                &.maximize#{$l} {
+                    background-image: -gtk-scaled(url('assets/window-restore#{$m}.png'),
+                                              url('assets/window-restore#{$m}.png'));
+                }
+            }
         }
     }
     

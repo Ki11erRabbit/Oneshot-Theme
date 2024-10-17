@@ -27,9 +27,9 @@
     background: $bg_color;
 }
 
-
+//
 // Buttons
-
+//
 button {
     min-height: 24px;
     min-width: 20px;
@@ -73,6 +73,7 @@ button {
     &:backdrop label {
         background-color: $bg_color;
         color: $fg_color;
+        margin: 0;
     }
     &:insensitive, &:disabled {
         color: $insensitive_fg_color;
@@ -80,14 +81,78 @@ button {
         label {
             color: $insensitive_fg_color;
             background-color: $bg_color;
+            margin: 0;
         }
     }
     &:insensitive, &:disabled label {
         color: $insensitive_fg_color;
         background-color: $bg_color;
+        margin: 0;
     }
 }
 
+@each $w,$a in ('check', 'checkbox'), ('radio', 'radio') {
+    @each $s,$as in ('', '-unchecked'),
+                (':disabled', '-unchecked-insensitive'),
+                ('indeterminate', '-mixed'),
+                ('indeterminate:disabled', '-mixed-insensitive'),
+                (':checked', '-checked'),
+                (':checked:disabled', '-checked-insensitive') {
+        .#{$w}#{$s},
+        #{$w}#{$s},
+        treeview.#{$w}#{$s} {
+            -gtk-icon-source: -gtk-scaled(url("assets/#{$a}#{$as}.png"));
+        }
+        
+        .view.#{$w}#{$s}:selected,
+        treeview.#{$w}#{$s}:selected,
+        row:selected #{$w}#{$s}, 
+        infobar #{$w}#{$s} {
+            -gtk-icon-source: -gtk-scaled(url("assets/#{$a}#{$as}-selected.png"));
+        }
+    }
+}
+
+// Selectionmode
+@each $s,$as in ('', '-selectionmode'),
+                (':checked', '-checked-selectionmode') {
+    .view.content-view.check#{$s}:not(.list) {
+        -gtk-icon-source: -gtk-scaled(url("assets/checkbox#{$as}.png"));
+        background-color: transparent;
+    }
+}
+
+checkbutton, radiobutton {
+    &.text-button {
+        padding: 2px;
+        outline-offset: 0;
+    }
+
+    label:not(:only-child) {
+        &:first-child {
+            margin-left: 2px;
+        }
+        &:last-child {
+            margin-right: 2px;
+        }
+    }
+}
+
+check, radio {
+    min-width: 8px;
+    min-height: 8px;
+    margin: 0 2px;
+
+    &:only-child {
+        menu menuitem & {
+            margin: 0;
+        }
+    }
+}
+
+//
+// Window Decorations
+//
 decoration {
     border-radius: 0px;
     border-width: 1px;

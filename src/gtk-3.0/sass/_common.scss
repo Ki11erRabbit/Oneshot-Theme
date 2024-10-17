@@ -27,6 +27,41 @@
     background: $bg_color;
 }
 
+menu,
+.menu {
+    color: $fg_color;
+    background-color: $bg_color;
+    border-color: $fg_color;
+    border-width: 1px;
+    border-style: solid;
+    margin: 1px;
+    padding: 0;
+    border-radius: 0px;
+    
+    .csd & {
+        padding: 4px 0px;
+        background-color: $bg_color;
+    }
+
+    separator {
+        .csd & separator {
+            background-color: $fg_color;
+        }
+    }
+
+    menuitem {
+        min-height: 16px;
+        min-width: 32px;
+        padding: 4px;
+
+        &:hover {
+            color: $hover_fg_color;
+        }
+    }
+}
+
+
+
 //
 // Buttons
 //
@@ -270,6 +305,8 @@ scrollbar {
         padding: 1px;
         min-height: 16px;
         min-width: 16px;
+        max-width: 16px;
+        max-height: 16px;
         border-radius: 0px;
         box-shadow: none;
         background-position: center;

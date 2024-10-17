@@ -193,8 +193,8 @@ switch {
 
 scrollbar {
     @at-root * {
-        -GtkScrollbar-has-backward-stepper: false;
-        -GtkScrollbar-has-forward-stepper: false;
+        -GtkScrollbar-has-backward-stepper: true;
+        -GtkScrollbar-has-forward-stepper: true;
     }
 
     background-color: $bg_color;

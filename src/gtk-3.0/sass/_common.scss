@@ -89,6 +89,9 @@ headerbar, .titlebar {
         }
         &.close {
             background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
+            & {
+                background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
+            }
             &:focus {
                 background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
             }
@@ -107,6 +110,9 @@ headerbar, .titlebar {
         }
         &.maximize {
             background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
+            & {
+                background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
+            }
             &:focus {
                 background-image: -gtk-scaled(url("assets/window-maximize.png"), url("assets/scalable/window-maximize.svg"))
             }
@@ -122,6 +128,9 @@ headerbar, .titlebar {
         }
         &.minimize {
             background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
+            & {
+                background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
+            }
             &:focus {
                 background-image: -gtk-scaled(url("assets/window-minimize.png"), url("assets/scalable/window-minimize.svg"))
             }

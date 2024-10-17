@@ -223,6 +223,14 @@ scrollbar {
         &.down:hover {
             background-image: -gtk-scaled(url('assets/pan-down-hover.png'));
         }
+
+        &.up:disabled {
+            background-image: -gtk-scaled(url('assets/pan-up-insensitive.png'));
+        }
+           
+        &.down:disabled {
+            background-image: -gtk-scaled(url('assets/pan-down-insensitive.png'));
+        }
            
     }
 
@@ -249,6 +257,14 @@ scrollbar {
         &.down:hover {
             background-image: -gtk-scaled(url('assets/pan-right-hover.png'));
         }
+
+        &.up:disabled {
+            background-image: -gtk-scaled(url('assets/pan-left-insensitive.png'));
+        }
+        &.down:disabled {
+            background-image: -gtk-scaled(url('assets/pan-right-insensitive.png'));
+        }
+            
     }
     slider {
         padding: 1px;
@@ -264,6 +280,9 @@ scrollbar {
         background-image: -gtk-scaled(url('assets/slider.png'));
         &:hover {
             background-image: -gtk-scaled(url('assets/slider-hover.png'));
+        }
+        &:disabled {
+            background-image: -gtk-scaled(url('assets/slider-insensitive.png'));
         }
     }
 }

@@ -51,6 +51,9 @@ decoration {
     }
 }
 
+//
+// Titlebuttons
+//
 headerbar, .titlebar {
     &.default-decoration button.titlebutton { // no vertical padding for ssd buttons
         padding-top: 0px;                       // already handled by the titlebar-padding
@@ -59,11 +62,16 @@ headerbar, .titlebar {
         padding-left: 0px;
         margin: 0;
     }
+    & label {
+        justify-content: left;
+    }
     border-color: $fg_color;
     border: 1px solid $fg_color;
     min-width: 24px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
     border-color: $fg_color;
     background-color: $bg_color;
     background-image: none;

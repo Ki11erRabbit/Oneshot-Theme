@@ -91,20 +91,19 @@ headerbar, .titlebar {
             color: $bg_color;
             background-color: $bg_color;
             background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
+            &:focus {
+                background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
+            }
             &:backdrop {
-                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
             }
             &:backdrop:hover {
-                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-close-hover.png"), url("assets/window-close-hover.png"))
             }
             &:hover {
-                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-close-hover.png"), url("assets/window-close-hover.png"))
             }
             &:active {
-                color: $bg_color;
                 background-image: -gtk-scaled(url("assets/window-close.png"), url("assets/window-close.png"))
             }
         }

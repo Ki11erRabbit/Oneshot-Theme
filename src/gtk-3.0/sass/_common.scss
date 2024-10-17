@@ -28,8 +28,61 @@
 }
 
 
+// Buttons
 
+button {
+    min-height: 24px;
+    min-width: 20px;
+    transition: all 200ms;
+    border: 1px solid;
+    border-radius: 0px;
+    padding: 0px 6px;
+    
+    separator {
+        border: 1px solid $fg_color;
+        margin: 1px 1px;
+    }
 
+    color: $fg_color;
+    background-color: $bg_color;
+
+    &:hover {
+        background-color: $hover_fg_color;
+        color: $fg_color;
+    }
+    &:hover label {
+        background-color: $bg_color;
+        color: $fg_color;
+    }
+    &:active, &:checked {
+        background-color: $hover_fg_color;
+        color: $fg_color;
+    }
+    &:active, &:checked label {
+        background-color: $bg_color;
+        color: $fg_color;
+    }
+    &:backdrop {
+        background-color: $bg_color;
+        color: $fg_color;
+    }
+    &:backdrop label {
+        background-color: $bg_color;
+        color: $fg_color;
+    }
+    &:insensitive {
+        color: $insensitive_fg_color;
+        background-color: $insensitive_bg_color;
+        label {
+            color: $insensitive_fg_color;
+            background-color: $bg_color;
+        }
+    }
+    &:insensitive label {
+        color: $insensitive_fg_color;
+        background-color: $bg_color;
+    }
+}
 
 decoration {
     border-radius: 1px;
@@ -67,6 +120,8 @@ headerbar, .titlebar {
     }
     border-color: $fg_color;
     border: 1px solid $fg_color;
+    border-radius: 1px;
+    border-width: 1px;
     min-width: 24px;
     padding-top: 1px;
     padding-bottom: 1px;

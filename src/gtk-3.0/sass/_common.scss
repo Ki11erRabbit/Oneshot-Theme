@@ -36,7 +36,9 @@ button {
     transition: all 200ms;
     border: 1px solid;
     border-radius: 0px;
-    padding: 0px 6px;
+    padding-left: 1px;
+    padding-right: 1px;
+    margin: 1px;
     
     separator {
         border: 1px solid $fg_color;
@@ -61,6 +63,7 @@ button {
     &:active, &:checked label {
         background-color: $bg_color;
         color: $fg_color;
+        padding: 4px;
     }
     &:backdrop {
         background-color: $bg_color;
@@ -76,16 +79,18 @@ button {
         label {
             color: $insensitive_fg_color;
             background-color: $bg_color;
+            padding: 4px;
         }
     }
     &:insensitive label {
         color: $insensitive_fg_color;
         background-color: $bg_color;
+        padding: 4px;
     }
 }
 
 decoration {
-    border-radius: 1px;
+    border-radius: 0px;
     border-width: 1px;
     border-style: solid;
     border-color: $fg_color;
@@ -120,7 +125,7 @@ headerbar, .titlebar {
     }
     border-color: $fg_color;
     border: 1px solid $fg_color;
-    border-radius: 1px;
+    border-radius: 0px;
     border-width: 1px;
     min-width: 24px;
     padding-top: 1px;

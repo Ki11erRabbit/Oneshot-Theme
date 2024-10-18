@@ -325,6 +325,10 @@ scrollbar {
             background-image: -gtk-scaled(url('assets/slider-insensitive.png'));
         }
     }
+    slider button {
+        max-width: 16px;
+        max-height: 16px;
+    }
 }
 
 

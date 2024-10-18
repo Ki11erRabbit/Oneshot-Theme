@@ -403,7 +403,7 @@ scale {
     }
 
     trough {
-        background-color: $insensitive_fg_color;
+        background-color: $insensitive_bg_color;
     }
 
     highlight {
@@ -459,6 +459,67 @@ scale {
         }
     }
 }
+//
+// Progressbar
+//
+progressbar {
+    color: $fg_color;
+
+    progress {
+        background-color: $bg_color;
+        color: $fg_color;
+        border-radius: 0px;
+        box-shadow: none;
+
+        row:selected &,
+        infobar & {
+            background-color: $selected_bg_color;
+        }
+
+        trough {
+            background-color: $insensitive_bg_color;
+        }
+    }
+}
+
+//
+// Levelbar
+//
+
+levelbar {
+    block {
+        min-width: 2px;
+        min-height: 2px;
+    }
+    &.vertical block {
+        min-width: 2px;
+        min-height: 2px;
+    }
+
+    trough {
+        background-color: $insensitive_bg_color;
+        border-radius: 0px;
+    }
+
+    block:not(.empty) {
+        background-color: $hover_fg_color;
+        border-radius: 0px;
+    }
+    block.low {
+        background-color: $insensitive_fg_color;
+    }
+    block.high {
+        background-color: $selected_fg_color;
+    }
+    block.full {
+        background-color: $fg_color;
+    }
+    block.empty {
+        background-color: $insensitive_bg_color;
+    }
+    
+}
+
 
 //
 // Window Decorations

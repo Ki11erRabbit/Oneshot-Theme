@@ -368,6 +368,8 @@ scale {
             border-radius: 0px;
         }
         highlight, fill {
+            max-height: 2px;
+            background-color: $fg_color;
             border-radius: 0px;
             margin: 0 -4px;
         }
@@ -380,6 +382,8 @@ scale {
             background-color: $bg_color;
         }
         highlight, fill {
+            max-width: 2px;
+            background-color: $fg_color;
             border-radius: 0px;
             margin: -4px 0;
         }
@@ -409,11 +413,13 @@ scale {
 
     trough {
         background-color: $bg_color;
+        border: 1px solid $fg_color;
         border-radius: 0px;
 
     }
 
     highlight {
+        background-color: $fg_color;
         border-radius: 0px;
         margin: 0 -4px;
 
@@ -423,6 +429,7 @@ scale {
     }
 
     fill {
+        background-color: $fg_color;
         border-radius: 0px;
         margin: -4px 0px;
         &:disabled {

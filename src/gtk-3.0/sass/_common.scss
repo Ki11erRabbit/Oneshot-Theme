@@ -1031,13 +1031,9 @@ decoration {
     }
 }
 
-/*window {
-    border-radius: 0px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: $fg_color;
-    background-color: $fg_color;
-}*/
+.window-frame {
+    box-shadow: 1px 1px 1px 1px alpha($fg_color, 1);
+}
 
 //
 // Titlebuttons

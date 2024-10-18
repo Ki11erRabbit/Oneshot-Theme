@@ -385,94 +385,24 @@ scale {
 
     slider {
         padding: 1px;
-        min-height: 2px;
-        min-width: 2px;
+        margin: -4px;
+        min-height: 16px;
+        min-width: 16px;
         border-radius: 0px;
         box-shadow: none;
-    }
-
-    &.horizontal {
-        indicator {
-            min-height: 16px;
-            min-width: 16px;
-            background-color: $fg_color;
-            border-radius: 0px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 16px 16px;
-            color: transparent;
-            background-color: transparent;
-            background-image: -gtk-scaled(url('assets/slider.png'));
-            &:hover {
-                background-image: -gtk-scaled(url('assets/slider-hover.png'));
-            }
-            &:disabled {
-                background-image: -gtk-scaled(url('assets/slider-insensitive.png'));
-            }
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        color: transparent;
+        background-color: transparent;
+        background-image: -gtk-scaled(url('assets/slider.png'));
+        &:hover {
+            background-image: -gtk-scaled(url('assets/slider-hover.png'));
         }
-
-        &.fine-tune indicator {
-            min-height: 16px;
-            min-width: 16px;
-            background-color: $fg_color;
-            border-radius: 0px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 16px 16px;
-            color: transparent;
-            background-color: transparent;
-            background-image: -gtk-scaled(url('assets/slider.png'));
-            &:hover {
-                background-image: -gtk-scaled(url('assets/slider-hover.png'));
-            }
-            &:disabled {
-                background-image: -gtk-scaled(url('assets/slider-insensitive.png'));
-            }
-
+        &:disabled {
+            background-image: -gtk-scaled(url('assets/slider-insensitive.png'));
         }
     }
-
-    &.vertical {
-        indicator {
-            min-height: 16px;
-            min-width: 16px;
-            background-color: $fg_color;
-            border-radius: 0px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 16px 16px;
-            color: transparent;
-            background-color: transparent;
-            background-image: -gtk-scaled(url('assets/slider.png'));
-            &:hover {
-                background-image: -gtk-scaled(url('assets/slider-hover.png'));
-            }
-            &:disabled {
-                background-image: -gtk-scaled(url('assets/slider-insensitive.png'));
-            }
-        }
-
-        &.fine-tune indicator {
-            min-height: 16px;
-            min-width: 16px;
-            background-color: $fg_color;
-            border-radius: 0px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 16px 16px;
-            color: transparent;
-            background-color: transparent;
-            background-image: -gtk-scaled(url('assets/slider.png'));
-            &:hover {
-                background-image: -gtk-scaled(url('assets/slider-hover.png'));
-            }
-            &:disabled {
-                background-image: -gtk-scaled(url('assets/slider-insensitive.png'));
-            }
-
-        }
-    }
-
 
     trough {
         background-color: $bg_color;

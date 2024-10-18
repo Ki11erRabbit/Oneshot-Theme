@@ -61,6 +61,10 @@ menubar,
     padding: 0;
     background-color: $bg_color;
     color: $fg_color;
+    border-color: $fg_color;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0px;
 
     &.backdrop {
         background-color: $bg_color;
@@ -589,7 +593,8 @@ decoration {
     border-width: 1px;
     border-style: solid;
     border-color: $fg_color;
-    bx-shadow: none;
+    background-color: $fg_color;
+    box-shadow: none;
     
     // cursor resize area
     margin: 10px
@@ -626,7 +631,7 @@ decoration {
         border-radius: 0;
         &, &.backdrop {
             border-color: $fg_color;
-            background-color: $bg_color;
+            background-color: $fg_color;
         }
 
         &.maximized, &.tiled {
@@ -642,8 +647,16 @@ decoration {
     
     .solid-csd & {
         border-radius: 0;
-        background-color: $bg_color;
+        background-color: $fg_color;
     }
+}
+
+window {
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $fg_color;
+    background-color: $fg_color;
 }
 
 //

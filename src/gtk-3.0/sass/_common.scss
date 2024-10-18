@@ -584,6 +584,148 @@ levelbar {
     
 }
 
+frame > border,
+.frame > border {
+    border-color: $fg_color;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0px;
+    background-color: $bg_color;
+}
+
+scrolledwindow {
+    vieport.frame {
+        border-style: none,
+    }
+
+    overshoot {
+        &.top {
+            position: center top;
+        }
+        &.bottom {
+            position: center bottom;
+        }
+        &.left {
+            position: left center;
+        }
+        &.right {
+            position: right center;
+        }
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    undershoot {
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+    }
+}
+
+//
+// Lists
+//
+list {
+    background-color: $bg_color;
+    border-color: $fg_color;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0px;
+
+    row {
+        padding: 2px;
+    }
+}
+
+row {
+
+    &:selected {
+        background-color: $selected_bg_color;
+        color: $selected_fg_color;
+    }
+    
+    &.activatable {
+        &.has-open-popup,
+        &:hover {
+            background-color: $hover_fg_color;
+        }
+
+        &.active {
+            background-color: $selected_bg_color;
+            color: $selected_fg_color;
+        }
+
+        &.disabled {
+            color: $insensitive_fg_color;
+            background-color: $bg_color;
+            image {
+                color: inherit;
+            }
+        }
+
+        &.selected {
+            &:active {
+                background-color: $selected_bg_color;
+                color: $selected_fg_color;
+            }
+            
+            &.has-open-popup,
+            &:hover {
+                background-color: $hover_fg_color;
+                label {
+                    background-color: $bg_color;
+                    color: $fg_color;
+                }
+            }
+        }
+    }
+}
+
+//
+// App Notifications
+//
+.app-notification {
+    padding: 4px;
+    color: $fg_color;
+    background-color: $bg_color;
+    background-slip: border-box;
+    border-color: $fg_color;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0px;
+    box-shadow: none;
+
+    border {
+        border: none;
+    }
+
+    button {
+        min-height: 16px;
+        min-width: 16px;
+        padding: 2px;
+        color: $fg_color;
+        background-color: $bg_color;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        border-radius: 0px;
+        border: none;
+        box-shadow: none;
+        &:hover {
+            background-color: $hover_fg_color;
+            color: $fg_color;
+        }
+        &:active {
+            background-color: $hover_fg_color;
+            color: $fg_color;
+        }
+        &:disabled {
+            color: $insensitive_fg_color;
+            background-color: $bg_color;
+        }
+    }
+}
 
 //
 // Window Decorations
@@ -680,7 +822,7 @@ headerbar, .titlebar {
     padding-left: 1px;
     padding-right: 1px;
     border-color: $fg_color;
-    background-color: $fg_color;
+    background-color: $bg_color;
     background-image: none;
 
     button.titlebutton {

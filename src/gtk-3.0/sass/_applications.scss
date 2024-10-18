@@ -1,0 +1,71 @@
+
+
+
+//
+// Nemo
+//
+
+.nemo-window {
+    background-color: $fg_color;
+
+    .nemo-toolbar {
+        border-color: $fg_color;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0px;
+        padding: 1px;
+
+    }
+
+    .places-treeview {
+        -NemoPlacesTreeView-disk-full-bg-color: $selected_bg_color;
+        -NemoPlacesTreeView-disk-full-fg-color: $fg_color;
+
+        .view.cell:hover {
+            border-color: $insensitive_fg_color;
+            background-color: $insensitive_bg_color;
+            label {
+                color: $fg_color;
+                background-color: $bg_color;
+            }
+        }
+        .view.cell:selected {
+            border-color: $selected_fg_color;
+            background-color: $selected_bg_color;
+            label {
+                color: $fg_color;
+                background-color: $bg_color;
+            }
+        }
+    }
+
+    .sidebar {
+        color: $fg_color;
+        background-color: $bg_color;
+        
+        .view, row {
+            color: $fg_color;
+            background-color: $bg_color;
+
+            &.cell:selected {
+                color: $selected_fg_color;
+                background-color: $selected_bg_color;
+                label {
+                    color: $fg_color;
+                    background-color: $bg_color;
+                }
+            }
+
+            &.expander {
+                color: $fg_color;
+                background-color: $bg_color;
+
+                &:hover {
+                    color: $hover_fg_color;
+                    background-color: $bg_color;
+                }
+            }
+        }
+    }
+}
+

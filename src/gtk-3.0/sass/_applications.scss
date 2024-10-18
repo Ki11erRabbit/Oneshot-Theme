@@ -6,14 +6,13 @@
 //
 
 .nemo-window {
-    .nemo-desktop {
-        border-style: none;
-        background-color: none;
-    }
-    .nemo-desktop.nemo-canvas-item {
+    .nemo-desktop.view.entry {
         &:hover {
             border-color: $insensitive_fg_color;
             background-color: $insensitive_bg_color;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 0px;
             label {
                 color: $fg_color;
                 background-color: $bg_color;
@@ -22,6 +21,9 @@
         &:selected {
             border-color: $selected_fg_color;
             background-color: $selected_bg_color;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 0px;
             label {
                 color: $fg_color;
                 background-color: $bg_color;

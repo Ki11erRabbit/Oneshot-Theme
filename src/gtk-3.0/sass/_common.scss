@@ -55,7 +55,28 @@ menu,
         padding: 4px;
 
         &:hover {
-            color: $hover_fg_color;
+            label {
+                background-color: $bg_color;
+                color: $hover_fg_color;
+            }
+            background-color: $hover_fg_color;
+        }
+        &:disabled {
+            color: $insensitive_fg_color;
+            background-color: $bg_color;
+        }
+        &:backdrop {
+            color: $fg_color;
+            background-color: $bg_color;
+        }
+        &:disabled:hover {
+            color: $insensitive_fg_color;
+            background-color: $bg_color;
+        }
+        
+        arrow {
+            color: $fg_color;
+            background-color: $bg_color;
         }
     }
 }

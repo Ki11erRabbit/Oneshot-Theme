@@ -356,22 +356,16 @@ scrollbar {
 // GtkScale
 //
 scale {
-    min-height: 16px;
-    min-width: 16px;
 
     &.horizontal {
         trough {
             min-height: 2px;
             min-width: 2px;
             background-color: $bg_color;
-            border: 1px solid $fg_color;
-            border-radius: 0px;
         }
         highlight, fill {
             max-height: 2px;
             background-color: $fg_color;
-            border-radius: 0px;
-            margin: 0 -4px;
         }
     }
 
@@ -413,8 +407,6 @@ scale {
 
     trough {
         background-color: $bg_color;
-        border: 1px solid $fg_color;
-        border-radius: 0px;
 
     }
 

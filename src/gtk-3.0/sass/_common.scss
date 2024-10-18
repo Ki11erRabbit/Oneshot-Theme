@@ -834,7 +834,6 @@ filechooserbutton:drop(active) {
         border-width: 1px;
         border-style: solid;
         border-radius: 0px;
-        border-left-style: none;
     }
 
     @at-root %sidebar_right,
@@ -844,7 +843,6 @@ filechooserbutton:drop(active) {
         border-width: 1px;
         border-style: solid;
         border-radius: 0px;
-        border-right-style: none;
     }
 
     list {
@@ -964,6 +962,96 @@ placessidebar {
     }
 }
 
+//
+// PlacesView
+//
+placesview {
+    > actionbar > revealer > box > label {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+//
+// Paned
+//
+paned {
+    > separator {
+        background-color: $fg_color;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0px;
+
+        &.wide {
+            min-width: 8px;
+            min-height: 8px;
+        }
+    }
+}
+
+//
+// GtkInfoBar
+//
+infobar {
+    padding: 4px;
+    color: $fg_color;
+    background-color: $bg_color;
+    border-color: $fg_color;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0px;
+    box-shadow: none;
+    &.warning {
+        background-color: $fg_color;
+        color: $bg_color;
+    }
+    &.error {
+        background-color: $fg_color;
+        color: $bg_color;
+    }
+    &.success {
+        background-color: $fg_color;
+        color: $bg_color;
+    }
+    &.question {
+        background-color: $fg_color;
+        color: $bg_color;
+    }
+}
+
+//
+// Tooltips
+//
+tooltip {
+    &.background {
+        background-color: $bg_color;
+        background-clip: padding-box;
+
+        label {
+            padding: 4px 8px;
+        }
+        color: $fg_color;
+        border-color: $fg_color;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0px;
+
+        decoration {
+            background-color: transparent;
+        }
+    }
+}
+
+//
+// Misc
+//
+
+.content-view {
+    background-color: $bg_color;
+    &:hover {
+        -gtk-icon-effect: highlight;
+    }
+}
 
 //
 // Window Decorations
@@ -1031,13 +1119,13 @@ decoration {
     }
 }
 
-window {
+/*window {
     border-radius: 0px;
     border-width: 1px;
     border-style: solid;
     border-color: $fg_color;
     background-color: $fg_color;
-}
+}*/
 
 //
 // Titlebuttons

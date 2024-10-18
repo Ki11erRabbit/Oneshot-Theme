@@ -728,6 +728,244 @@ row {
 }
 
 //
+// Expanders
+//
+expander {
+    arrow {
+        min-width: 16px;
+        min-height: 16px;
+
+        &:dir(rtl) {
+
+        }
+        &:hover {
+        }
+        &:checked {
+        }
+    }
+}
+
+//
+// Calendar
+//
+
+
+
+//
+// Dialogs
+//
+.dialog-action-area .button.text-button {
+    padding: 6px 16px;
+}
+
+.message-dialog .dialog-action-area .button {
+    padding: 8px;
+}
+
+.message-dialog {
+    -GtkDialog-action-area-border: 0;
+
+    .titlebar {
+        background-color: $bg_color;
+        border-color: $fg_color;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0px;
+    }
+
+    &.csd {
+        &.background {
+            border-color: $fg_color;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 0px;
+        }
+        .dialog-action-area .button {
+            padding: 8px;
+            border-radius: 0px;
+        }
+    }
+}
+
+//
+// FileChooser
+//
+filechooser {
+    #pathbarbox {
+        background-color: $bg_color;
+        border-color: $fg_color;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0px;
+    }
+    
+    .search-bar {
+        background-color: $bg_color;
+        border-color: $fg_color;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0px;
+    }
+
+    actionbar {
+        background-color: $bg_color;
+    }
+}
+
+filechooserbutton:drop(active) {
+    box-shadow: none;
+    background-color: $hover_fg_color;
+}
+
+//
+// Sidebar
+//
+.sidebar {
+    border-color: $fg_color;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0px;
+
+    @at-root %sidebar_left,
+    &:dir(ltr),
+    &.left,
+    &.left:dir(rtl) {
+        border-color: $fg_color;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0px;
+        border-left-style: none;
+    }
+
+    @at-root %sidebar_right,
+    &:dir(rtl),
+    &.right {
+        border-color: $fg_color;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0px;
+        border-right-style: none;
+    }
+
+    list {
+        background-color: $bg_color;
+    }
+
+    paned & {
+        &.left, &.right, &.left:dir(rlt), &:dir(ltr), & {
+            border-color: $fg_color;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 0px;
+        }
+    }
+}
+
+stacksidebar {
+    &.sidebar {
+        &:dir(ltr) list,
+        &.left list,
+        &.left:dir(rtl) list {
+            @extend %sidebar_left;
+        }
+
+        &:dir(rtl) list,
+        &.right list {
+            @extend %sidebar_right;
+        }
+    }
+
+    row {
+        padding: 8px 4px;
+
+        > label {
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+        &.needs-attention {
+        }
+        &.activatable:selected.needs-attention {
+
+        }
+    }
+}
+
+placessidebar {
+    > viewport.frame {
+        border-color: $fg_color;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0px;
+    }
+
+    row {
+        min-height: 24px;
+        padding: 4px;
+
+        > revealer {
+            paddign: 0 8px;
+        }
+
+        image.sidebar-icon {
+            &:dir(ltr) {
+                padding-right: 8px;
+            }
+            &:dir(rtl) {
+                padding-left: 8px;
+            }
+        }
+        label.sidebar-label {
+            &:dir(ltr) {
+                padding-left: 4px;
+            }
+            &:dir(rtl) {
+                padding-right: 4px;
+            }
+        }
+        @at-root button.sidebar-button {
+            min-width: 24px;
+            min-height: 24px;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            padding: 0;
+            border-radius: 0px;
+            -gtk-outline-radius: 0px;
+
+            &:not(:hover):not(:active) > image {
+                opacity: 0.5;
+            }
+        }
+
+        &.sidebar-placeholder-row {
+            padding: 0 4px;
+            min-height: 2px;
+            background-clip: content-box;
+        }
+
+        &.sidebar-new-bookmark-row {
+            color: $fg_color;
+        }
+
+        &:drop(active):not(:disabled) {
+            &, label, image {
+                color: $selected_fg_color;
+            }
+
+            box-shadow: none;
+
+            &:selected {
+                &, label, image {
+                    color: $selected_fg_color;
+                    background-color: $selected_bg_color;
+                }
+            }
+        }
+
+    }
+}
+
+
+//
 // Window Decorations
 //
 decoration {
@@ -793,13 +1031,13 @@ decoration {
     }
 }
 
-window {
+/*window {
     border-radius: 0px;
     border-width: 1px;
     border-style: solid;
     border-color: $fg_color;
     background-color: $fg_color;
-}
+}*/
 
 //
 // Titlebuttons

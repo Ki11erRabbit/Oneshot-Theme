@@ -1032,7 +1032,7 @@ decoration {
 }
 
 .window-frame {
-    box-shadow: 1px 1px 1px 1px alpha($fg_color, 1);
+    box-shadow: 1px 1px 1px 1px $fg_color;
 }
 
 //

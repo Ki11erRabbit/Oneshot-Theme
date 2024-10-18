@@ -370,7 +370,7 @@ scale {
         highlight, fill {
             background-color: $fg_color;
             border-radius: 0px;
-            margin: -14 -4px;
+            margin: 2px -4px;
         }
     }
 
@@ -379,13 +379,11 @@ scale {
             min-height: 2px;
             min-width: 2px;
             background-color: $bg_color;
-            border: 1px solid $fg_color;
-            border-radius: 0px;
         }
         highlight, fill {
             background-color: $fg_color;
             border-radius: 0px;
-            margin: -4px -14px;
+            margin: -4px 2px;
         }
     }
 

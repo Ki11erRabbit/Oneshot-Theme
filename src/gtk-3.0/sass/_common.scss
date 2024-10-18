@@ -361,7 +361,6 @@ scale {
         trough {
             min-height: 2px;
             min-width: 2px;
-            background-color: $bg_color;
         }
         highlight, fill {
             max-height: 2px;
@@ -373,7 +372,6 @@ scale {
         trough {
             min-height: 2px;
             min-width: 2px;
-            background-color: $bg_color;
         }
         highlight, fill {
             max-width: 2px;
@@ -405,8 +403,7 @@ scale {
     }
 
     trough {
-        background-color: $bg_color;
-
+        background-color: $insensitive_fg_color;
     }
 
     highlight {

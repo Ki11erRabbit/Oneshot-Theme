@@ -352,6 +352,96 @@ scrollbar {
     }
 }
 
+//
+// GtkScale
+//
+scale {
+    min-height: 16px;
+    min-width: 16px;
+
+    &.horizontal {
+        trough {
+            min-height: 16px;
+            min-width: 16px;
+            background-color: $bg_color;
+            border: 1px solid $fg_color;
+            border-radius: 0px;
+        }
+        highlight, fill {
+            background-color: $fg_color;
+            border-radius: 0px;
+            margin: 0 -4px;
+        }
+    }
+
+    &.vertical {
+        trough {
+            min-height: 16px;
+            min-width: 16px;
+            background-color: $bg_color;
+            border: 1px solid $fg_color;
+            border-radius: 0px;
+        }
+        highlight, fill {
+            background-color: $fg_color;
+            border-radius: 0px;
+            margin: -4px 0px;
+        }
+    }
+
+    slider {
+        padding: 1px;
+        min-height: 16px;
+        min-width: 16px;
+        max-width: 16px;
+        max-height: 16px;
+        border-radius: 0px;
+        box-shadow: none;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        color: transparent;
+        background-color: transparent;
+        background-image: -gtk-scaled(url('assets/slider.png'));
+        &:hover {
+            background-image: -gtk-scaled(url('assets/slider-hover.png'));
+        }
+        &:disabled {
+            background-image: -gtk-scaled(url('assets/slider-insensitive.png'));
+        }
+    }
+
+    trough {
+        background-color: $bg_color;
+        border: 1px solid $fg_color;
+        border-radius: 0px;
+
+    }
+
+    highlight {
+        background-color: $fg_color;
+        border-radius: 0px;
+        margin: 0 -4px;
+
+        &:disabled {
+            background-color: $insensitive_fg_color;
+        }
+    }
+
+    fill {
+        background-color: $fg_color;
+        border-radius: 0px;
+        margin: -4px 0px;
+        &:disabled {
+            background-color: $insensitive_fg_color;
+        }
+    }
+
+    marks {
+        color: $fg_color;
+        background-color: $bg_color;
+    }
+}
 
 //
 // Window Decorations

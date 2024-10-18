@@ -361,8 +361,8 @@ scale {
 
     &.horizontal {
         trough {
-            min-height: 16px;
-            min-width: 16px;
+            min-height: 2px;
+            min-width: 2px;
             background-color: $bg_color;
             border: 1px solid $fg_color;
             border-radius: 0px;
@@ -376,8 +376,8 @@ scale {
 
     &.vertical {
         trough {
-            min-height: 16px;
-            min-width: 16px;
+            min-height: 2px;
+            min-width: 2px;
             background-color: $bg_color;
             border: 1px solid $fg_color;
             border-radius: 0px;

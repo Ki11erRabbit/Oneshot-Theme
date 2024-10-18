@@ -27,6 +27,66 @@
     background: $bg_color;
 }
 
+
+//
+// Spinner Animations
+//
+@keyframes spin {
+    to {
+        -gtk-icon-transform: rotate(1turn);
+    }
+}
+
+spinner {
+    background-image: none;
+    opacity: 0;
+    -gtk-icon-source: -gtk-icontheme('process-working-symbolic');
+
+    &:checked {
+        opacity: 1;
+        animation: spin 1s linear infinite;
+
+        &:disabled {
+            opacity: 0.5;
+        }
+    }
+}
+
+//
+// Menus
+//
+menubar,
+.menubar {
+    -GtkWidget-window-dragging: true;
+    padding: 0;
+    background-color: $bg_color;
+    color: $fg_color;
+
+    &.backdrop {
+        background-color: $bg_color;
+        color: $fg_color;
+    }
+
+    > menuitem {
+        padding 4px 8px;
+        color: $fg_color;
+        
+        &:hover {
+            background-color: $hover_fg_color;
+            label {
+                background-color: $bg_color;
+                color: $fg_color;
+            }
+        }
+        &:disabled {
+            color: $insensitive_fg_color;
+            background-color: $bg_color;
+        }
+
+    }
+}
+
+
 menu,
 .menu {
     color: $fg_color;
@@ -382,7 +442,7 @@ scale {
     }
 
     slider {
-        padding: 6px;
+        padding: 8px;
         margin: -12px;
         min-height: 16px;
         min-width: 16px;

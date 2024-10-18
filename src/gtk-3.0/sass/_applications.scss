@@ -113,3 +113,41 @@
     }
 }
 
+//
+// Thunar
+//
+
+.thunar {
+    .toolbar {
+        border-color: $fg_color;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0px;
+        padding: 1px;
+    }
+
+    .scrolledwindow.view {
+        &:hover {
+            border-color: alpha($insensitive_fg_color, 1.0);
+            background-color: alpha($insensitive_bg_color, 1.0);
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 0px;
+            label {
+                color: $fg_color;
+                background-color: $bg_color;
+            }
+        }
+        &:selected {
+            border-color: alpha($selected_fg_color, 1.0);
+            background-color: alpha($selected_bg_color, 1.0);
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 0px;
+            label {
+                color: $fg_color;
+                background-color: $bg_color;
+            }
+        }
+    }
+}

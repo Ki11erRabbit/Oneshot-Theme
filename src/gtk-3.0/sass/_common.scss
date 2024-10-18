@@ -432,6 +432,35 @@ scale {
         color: $fg_color;
         background-color: $bg_color;
     }
+
+    &.horizontal {
+        indicator {
+            min-height: 2px;
+            min-width: 1px;
+            background-color: $bg_color;
+            color: $bg_color;
+        }
+
+        &.fine-tune {
+            indicator {
+                min-height: 4px;
+            }
+        }
+    }
+
+    &.vertical {
+        indicator {
+            min-height: 1px;
+            min-width: 2px;
+            background-color: $bg_color;
+            color: $bg_color;
+        }
+        &.fine-tune {
+            indicator {
+                min-width: 4px;
+            }
+        }
+    }
 }
 
 //

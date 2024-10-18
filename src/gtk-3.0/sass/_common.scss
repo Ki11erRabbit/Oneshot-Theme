@@ -301,7 +301,10 @@ scrollbar {
         }
             
     }
-    scale slider {
+    scale {
+        margin: -5px;
+    }
+    slider {
         padding: 1px;
         min-height: 16px;
         min-width: 16px;

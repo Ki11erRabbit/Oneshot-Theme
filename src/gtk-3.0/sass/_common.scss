@@ -301,7 +301,8 @@ scrollbar {
         }
             
     }
-    slider {
+    scale slider {
+        margin: -5px;
         padding: 1px;
         min-height: 16px;
         min-width: 16px;
@@ -311,7 +312,7 @@ scrollbar {
         box-shadow: none;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 16px 100%;
+        background-size: 16px 16px;
         color: transparent;
         background-color: transparent;
         background-image: -gtk-scaled(url('assets/slider.png'));

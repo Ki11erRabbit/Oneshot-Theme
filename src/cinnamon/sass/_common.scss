@@ -208,14 +208,14 @@ StScrollBar {
         background-position: center;
         background-repeat: no-repeat;
         background-size: 16px 16px;
-        background-image: url('assets/scalable/pan-up.svg');
+        background-image: url('assets/scalable/slider.svg');
 
         &:hover {
-            background-image: url('assets/scalable/pan-up-hover.svg');
+            background-image: url('assets/scalable/slider-hover.svg');
         }
 
         &:active {
-            background-image: url('assets/scalable/pan-up.svg');
+            background-image: url('assets/scalable/slider.svg');
         }
     }
     StButton#hhandle {
@@ -227,12 +227,12 @@ StScrollBar {
         background-position: center;
         background-repeat: no-repeat;
         background-size: 16px 16px;
-        background-image: url('assets/scalable/pan-down.svg');
+        background-image: url('assets/scalable/slider.svg');
         &:hover {
-            background-image: url('assets/scalable/pan-down-hover.svg');
+            background-image: url('assets/scalable/slider-hover.svg');
         }
         &:active {
-            background-image: url('assets/scalable/pan-down.svg');
+            background-image: url('assets/scalable/slider.svg');
         }
     }
 }
@@ -424,8 +424,9 @@ StScrollBar {
         spacing: 4px;
 
         &:dnd {
-            background-color: $bg_color;
-            color: $hover_fg_color;
+            background-gradient-direction: vertical;
+            background-gradient-start: $hover_fg_color;
+            background-gradient-end: $hover_fg_color;
         }
         &:ltr {
             padding-right: 4px;
@@ -447,8 +448,9 @@ StScrollBar {
     &Right {
         spacing: 4px;
         &:dnd {
-            background-color: $bg_color;
-            color: $hover_fg_color;
+            background-gradient-direction: vertical;
+            background-gradient-start: $hover_fg_color;
+            background-gradient-end: $hover_fg_color;
         }
         &:ltr {
             padding-right: 4px;
@@ -470,8 +472,9 @@ StScrollBar {
     &Center {
         spacing: 4px;
         &:dnd {
-            background-color: $bg_color;
-            color: $hover_fg_color;
+            background-gradient-direction: vertical;
+            background-gradient-start: $hover_fg_color;
+            background-gradient-end: $hover_fg_color;
         }
     }
 
@@ -486,8 +489,9 @@ StScrollBar {
         spacing: 4px;
 
         &:dnd {
-            background-color: $bg_color;
-            color: $hover_fg_color;
+            background-gradient-direction: vertical;
+            background-gradient-start: $hover_fg_color;
+            background-gradient-end: $hover_fg_color;
         }
         &:ltr {
             padding-right: 4px;
@@ -509,8 +513,9 @@ StScrollBar {
     &Right {
         spacing: 4px;
         &:dnd {
-            background-color: $bg_color;
-            color: $hover_fg_color;
+            background-gradient-direction: vertical;
+            background-gradient-start: $hover_fg_color;
+            background-gradient-end: $hover_fg_color;
         }
         &:ltr {
             padding-right: 4px;
@@ -536,8 +541,9 @@ StScrollBar {
             padding-right: 0px;
         }
         &:dnd {
-            background-color: $bg_color;
-            color: $hover_fg_color;
+            background-gradient-direction: vertical;
+            background-gradient-start: $hover_fg_color;
+            background-gradient-end: $hover_fg_color;
         }
     }
 

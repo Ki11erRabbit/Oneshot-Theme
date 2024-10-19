@@ -1,3 +1,3 @@
 #! /bin/bash
 
-pysassc ./sass/gtk.scss $1
+pysassc ./sass/cinnamon.scss $1

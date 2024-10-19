@@ -196,7 +196,7 @@ button {
         color: $fg_color;
         margin: 0;
     }
-    &:insensitive, &:disabled {
+    &:disabled {
         color: $insensitive_fg_color;
         background-color: $insensitive_bg_color;
         label {
@@ -205,7 +205,7 @@ button {
             margin: 0;
         }
     }
-    &:insensitive, &:disabled label {
+    &:disabled label {
         color: $insensitive_fg_color;
         background-color: $bg_color;
         margin: 0;
@@ -901,7 +901,7 @@ placessidebar {
         padding: 4px;
 
         > revealer {
-            paddign: 0 8px;
+            padding: 0 8px;
         }
 
         image.sidebar-icon {

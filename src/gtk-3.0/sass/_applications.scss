@@ -127,8 +127,8 @@
         padding: 1px;
     }
 
-    .standard-view .view {
-        &:hover {
+    .standard-view {
+        .view:hover {
             border-color: $insensitive_fg_color;
             border-style: solid;
             border-radius: 0px;
@@ -139,7 +139,7 @@
                 background-color: $bg_color;
             }
         }
-        &:selected {
+        .view:selected {
             border-color: $selected_fg_color;
             border-style: solid;
             border-radius: 0px;

@@ -654,13 +654,16 @@ StScrollBar {
             background-gradient-end: $hover_fg_color;
         }
 
-        &:active,
-        &:checked {
+        &:active {
             color: $bg_color;
             background-color: $fg_color;
             background-gradient-direction: vertical;
             background-gradient-start: $fg_color;
             background-gradient-end: $fg_color;
+        }
+        &:checked {
+            color: $bg_color;
+            background-color: red;
         }
 
         & .progress-bar {

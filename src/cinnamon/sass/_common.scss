@@ -664,6 +664,9 @@ StScrollBar {
         &:checked {
             color: $bg_color;
             background-color: red;
+            background-gradient-direction: vertical;
+            background-gradient-start: red;
+            background-gradient-end: red;
         }
 
         & .progress-bar {

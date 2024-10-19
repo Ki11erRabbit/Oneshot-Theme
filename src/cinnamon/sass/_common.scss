@@ -653,11 +653,11 @@ StScrollBar {
             background-gradient-end: $hover_fg_color;
         }
         &:focus {
-            color: $bg_color;
-            background-color: $fg_color;
+            color: $selected_fg_color;
+            background-color: $selected_bg_color;
             background-gradient-direction: vertical;
-            background-gradient-start: $fg_color;
-            background-gradient-end: $fg_color;
+            background-gradient-start: $selected_fg_color;
+            background-gradient-end: $selected_fg_color;
         }
 
         &:active {

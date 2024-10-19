@@ -1,0 +1,57 @@
+// When color definition differs for dark and light variant,
+// it gets @if ed depending on $variant
+
+// We need to set this first because we use it to tint many
+// of the remaining colors
+$selected_bg_color: $selected_bg_color;
+
+$base_color: $fg_color;
+$text_color: $fg_color;
+
+$selected_fg_color: $selected_fg_color;
+
+$borders_color: $fg_color;
+
+$separator_color: $fg_color;
+
+$link_color: $fg_color;
+
+$warning_color: #F27835;
+$error_color: #FC4138;
+$destructive_color: #F04A50;
+
+
+$tooltip_bg_color: $bg_color;
+$tooltip_fg_color: $fg_color;
+$tooltip_border_color: $fg_color;
+
+$osd_fg_color: $fg_color;
+$osd_bg_color: $bg_color;
+
+$osd_button_bg: $bg_color;
+$osd_button_border: $fg_color;
+
+$osd_entry_bg: $bg_color;
+$osd_entry_border: $fg_color;
+
+$osd_insensitive_fg_color: $insensitive_fg_color;
+
+$panel_bg: $bg_color;
+$panel_fg: $fg_color;
+
+$entry_bg: $bg_color;
+$entry_border: $fg_color;
+
+$button_bg: $bg_color;
+$button_border: $entry_border;
+
+// Colors used for highlights in places where we don't want to use accents
+$noaccent_bg_color: $bg_color;
+$noaccent_fg_color: $text_color;
+$noaccent_selected_bg_color: $selected_bg_color;
+$noaccent_selected_fg_color: $selected_fg_color;
+
+$applet_separator_color: $fg_color;
+
+$corner_bar_unhighlighted: $applet_separator_color;
+$corner_bar_highlighted: $fg_color;

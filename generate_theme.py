@@ -83,13 +83,13 @@ $selected_bg_color: {selection_fill};
 """)
     
 
-def output_file(file, color):
+def output_file(file, color, output_name):
     out_dir = f"{cwd}/{output_dir}/{file}"
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
     convert_assets(file, out_dir, color)
     generate_colors_stylesheet(file, color)
-    program = [f'{cwd}/{src_dir}/{file}/parse-sass.sh', f'{out_dir}/gtk.css']
+    program = [f'{cwd}/{src_dir}/{file}/parse-sass.sh', f'{out_dir}/{output_name}.css']
     proc = subprocess.Popen(program, cwd=f'{cwd}/{src_dir}/{file}')
     proc.wait()
 
@@ -116,9 +116,8 @@ def main(color):
         colors["user"] = {"base": args.color_base, "base_hover": args.color_selected, "dark": args.color_dark}
         color = "user"
     
-    for file in os.listdir(src_dir):
-        if file == 'gtk-3.0': #or file == 'gtk-4.0':
-            output_file(file, color)
+    output_file('cinnamon', color, 'cinnamon')
+    output_file('gtk-3.0', color, 'gtk')
     
     create_index_theme(color)
 

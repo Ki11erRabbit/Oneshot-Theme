@@ -1,5 +1,5 @@
-$variant: 'light';
 
 @import "_colors"; //use gtk colors
-@import "_drawing";
+@import "_colors-public"; //use gtk colors
+//@import "_drawing";
 @import "_common";

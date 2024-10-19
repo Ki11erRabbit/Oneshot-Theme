@@ -886,6 +886,7 @@ StScrollBar {
 }
 
 #menu-search-entry {
+    @extend %entry;
     width: 250px;
     min-height: 16px;
     font-weight: normal;
@@ -893,7 +894,6 @@ StScrollBar {
     background-color: $bg_color;
     color: $fg_color;
 
-    @extend %entry;
 }
 
 .menu-search-entry-icon {

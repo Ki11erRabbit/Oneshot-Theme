@@ -117,7 +117,7 @@
 // Thunar
 //
 
-.thunar {
+/*.thunar {
     &.toolbar, toolbar {
 
         border-color: $fg_color;
@@ -149,7 +149,7 @@
 .thunar widget.view:hover {
     background-color: $insensitive_bg_color;
     color: $bg_color;
-}
+}*/
 .thunar widget.view:selected {
     background-color: $selected_bg_color;
     color: $bg_color;

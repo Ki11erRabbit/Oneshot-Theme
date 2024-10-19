@@ -583,6 +583,9 @@ StScrollBar {
         color: $fg_color;
         
         &:hover {
+            background-gradient-direction: vertical;
+            background-gradient-start: $insensitive_bg_color;
+            background-gradient-end: $insensitive_bg_color;
             color: $insensitive_fg_color;
             background-color: $insensitive_bg_color;
             border: 1px solid;
@@ -609,3 +612,110 @@ StScrollBar {
         }
     }
 }
+
+//
+// Window List (windowList.js)
+//
+.window-list {
+
+}
+
+//
+// Grouped Window List
+//
+.grouped-window-list {
+    &-item-label {
+        color: $fg_color;
+        background-color: $bg_color;
+        min-width: 5px;
+        width: 15em;
+    }
+
+    &-item-box {
+        text-align: left;
+        font-weight: bold;
+        background-image: none;
+        padding: 1px;
+        padding-left: 4px;
+        padding-right: 4px;
+        transition-duration: 100;
+        color: $fg_color;
+        background-color: $bg_color;
+        border: 1px solid;
+        border-radius: 0px;
+        border-color: $fg_color;
+
+        &:hover,
+        &:focus {
+            background-color: $hover_fg_color;
+            background-gradient-direction: vertical;
+            background-gradient-start: $hover_fg_color;
+            background-gradient-end: $hover_fg_color;
+        }
+
+        &:active,
+        &:checked {
+            background-color: $fg_color;
+            background-gradient-direction: vertical;
+            background-gradient-start: $fg_color;
+            background-gradient-end: $fg_color;
+        }
+
+        & .progress-bar {
+            background-color: $selected_bg_color;
+        }
+
+    }
+
+    &-item-demands-attention {
+        background-color: $warning_color;
+        background-gradient-direction: vertical;
+        background-gradient-start: $warning_color;
+        background-gradient-end: $warning_color;
+    }
+
+    &-number-label {
+        font-size: 0.8em;
+        color: $fg_color;
+        background-color: $bg_color;
+    }
+
+    &-thumbnail-menu {
+        padding: 0;
+        background-color: $bg_color;
+        color: $fg_color;
+        border-color: $fg_color;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0px;
+
+        > StBoxLayout {
+            padding: 4px;
+        }
+
+        .item-box {
+            padding: 8px;
+            border: 1px solid;
+            border-radius: 0px;
+            spacing: 4px;
+
+            &:outlined {
+                background-color: $insensitive_bg_color;
+            }
+
+            &:selected {
+                background-color: $selected_bg_color;
+            }
+        }
+
+        .thumbnail {
+            width: 256px;
+        }
+
+        .separator {
+            width: 1px;
+            background: $fg_color;
+        }
+    }
+}
+

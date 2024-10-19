@@ -793,12 +793,14 @@ StScrollBar {
 
         // Used for newly installed applications
         &:highlighted {
+            padding: 8px;
             font-weight: bold;
             color: $bg_color;
             background-color: $selected_bg_color;
         }
 
         &-selected {
+            padding: 8px;
             color: $bg_color;
             background-color: $selected_bg_color;
 
@@ -821,16 +823,19 @@ StScrollBar {
         background-color: $bg_color;
         
         &-selected {
+            padding: 8px;
             color: $bg_color;
             background-color: $selected_bg_color;
         }
 
         &:hover {
+            padding: 8px;
             background-color: $insensitive_bg_color;
             color: $fg_color;
         }
 
         &-greyed {
+            padding: 8px;
             color: $insensitive_fg_color;
             background-color: $insensitive_bg_color;
         }
@@ -885,6 +890,8 @@ StScrollBar {
     min-height: 16px;
     font-weight: normal;
     caret-color: $fg_color;
+    background-color: $bg_color;
+    color: $fg_color;
 
     @extend %entry;
 }

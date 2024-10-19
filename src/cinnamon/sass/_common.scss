@@ -654,10 +654,10 @@ StScrollBar {
         }
         &:focus {
             color: $bg_color;
-            background-color: $hover_fg_color;
+            background-color: $fg_color;
             background-gradient-direction: vertical;
-            background-gradient-start: $hover_fg_color;
-            background-gradient-end: $hover_fg_color;
+            background-gradient-start: $fg_color;
+            background-gradient-end: $fg_color;
         }
 
         &:active {
@@ -738,6 +738,7 @@ StScrollBar {
         border: 1px solid;
         border-radius: 0px;
         border-color: $fg_color;
+
     }
 
     &-favorites-button {
@@ -853,6 +854,7 @@ StScrollBar {
         padding-left: 24px;
         text-align: right;
         height: 2.2em;
+        background-color: $bg_color;
 
         &:rtl {
             padding-top: 8px;

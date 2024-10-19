@@ -645,7 +645,13 @@ StScrollBar {
         border-radius: 0px;
         border-color: $fg_color;
 
-        &:hover,
+        &:hover {
+            color: $bg_color;
+            background-color: $hover_fg_color;
+            background-gradient-direction: vertical;
+            background-gradient-start: $hover_fg_color;
+            background-gradient-end: $hover_fg_color;
+        }
         &:focus {
             color: $bg_color;
             background-color: $hover_fg_color;
@@ -655,18 +661,13 @@ StScrollBar {
         }
 
         &:active {
+        }
+        &:checked {
             color: $bg_color;
             background-color: $fg_color;
             background-gradient-direction: vertical;
             background-gradient-start: $fg_color;
             background-gradient-end: $fg_color;
-        }
-        &:checked {
-            color: $bg_color;
-            background-color: red;
-            background-gradient-direction: vertical;
-            background-gradient-start: red;
-            background-gradient-end: red;
         }
 
         & .progress-bar {

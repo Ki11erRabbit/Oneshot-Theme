@@ -18,10 +18,7 @@
             border-width: 1px;
             border-style: solid;
             border-radius: 0px;
-            label {
-                color: $fg_color;
-                background-color: $bg_color;
-            }
+            color: $fg_color;
         }
         &:selected {
             border-color: $selected_fg_color;
@@ -29,14 +26,11 @@
             border-width: 1px;
             border-style: solid;
             border-radius: 0px;
-            label {
-                color: $fg_color;
-                background-color: $bg_color;
-            }
+            color: $fg_color;
         }
     }
 
-    .nemo-toolbar {
+    statusbar {
         border-color: $fg_color;
         border-width: 1px;
         border-style: solid;
@@ -52,18 +46,12 @@
         .view.cell:hover {
             border-color: $insensitive_fg_color;
             background-color: $insensitive_bg_color;
-            label {
-                color: $fg_color;
-                background-color: $bg_color;
-            }
+            color: $fg_color;
         }
         .view.cell:selected {
             border-color: $selected_fg_color;
             background-color: $selected_bg_color;
-            label {
-                color: $fg_color;
-                background-color: $bg_color;
-            }
+            color: $fg_color;
         }
     }
 
@@ -73,18 +61,12 @@
         .view.cell:hover {
             border-color: $insensitive_fg_color;
             background-color: $insensitive_bg_color;
-            label {
             color: $fg_color;
-            background-color: $bg_color;
-            }
         }
         .view.cell:selected {
             border-color: $selected_fg_color;
             background-color: $selected_bg_color;
-            label {
-                color: $fg_color;
-                background-color: $bg_color;
-            }
+            color: $fg_color;
         }
     }
 

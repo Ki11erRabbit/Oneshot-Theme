@@ -126,14 +126,26 @@
         border-radius: 0px;
         padding: 1px;
     }
+    
+    statusbar {
+        border-color: $fg_color;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0px;
+        padding: 1px;
+    }
 
-    .widget {
+    widget {
         .view:hover {
             border-color: $insensitive_fg_color;
             border-style: solid;
             border-radius: 0px;
             border-width: 1px;
             background-color: $insensitive_bg_color;
+            label {
+                color: $fg_color;
+                background-color: $bg_color;
+            }
         }
         .view:selected {
             border-color: $selected_fg_color;
@@ -141,6 +153,10 @@
             border-radius: 0px;
             border-width: 1px;
             background-color: $selected_bg_color;
+            label {
+                color: $fg_color;
+                background-color: $bg_color;
+            }
         }
     }
 }

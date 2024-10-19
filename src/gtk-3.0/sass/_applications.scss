@@ -137,32 +137,20 @@
 
     widget {
         .view:hover {
-            border-color: $insensitive_fg_color;
-            border-style: solid;
-            border-radius: 0px;
-            border-width: 1px;
             background-color: $insensitive_bg_color;
+            color: $bg_color;
         }
         .view:selected {
-            border-color: $selected_fg_color;
-            border-style: solid;
-            border-radius: 0px;
-            border-width: 1px;
             background-color: $selected_bg_color;
+            color: $bg_color;
         }
     }
 }
 .thunar widget.view:hover {
     border-color: $insensitive_fg_color;
-    border-style: solid;
-    border-radius: 0px;
-    border-width: 1px;
-    background-color: $insensitive_bg_color;
+    color: $bg_color;
 }
 .thunar widget.view:selected {
     border-color: $selected_fg_color;
-    border-style: solid;
-    border-radius: 0px;
-    border-width: 1px;
-    background-color: $selected_bg_color;
+    color: $bg_color;
 }

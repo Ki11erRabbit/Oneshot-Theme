@@ -728,3 +728,168 @@ StScrollBar {
     }
 }
 
+//
+// Menu (menu.js)
+//
+.menu {
+    &-favorites-box {
+        padding: 8px;
+        background-color: $bg_color;
+        border: 1px solid;
+        border-radius: 0px;
+        border-color: $fg_color;
+    }
+
+    &-favorites-button {
+        padding: .9em 1em;
+        border: 1px solid;
+        border-radius: 0px;
+        border-color: $fg_color;
+
+        &:hover {
+            background-color: $hover_fg_color;
+            color: $fg_color;
+        }
+    }
+
+    &-places {
+        &-box {
+            padding: 8px;
+            background-color: $bg_color;
+            border: 1px solid;
+            border-radius: 0px;
+            border-color: $fg_color;
+        }
+
+        &-button {
+            padding: .9em 1em;
+            border: 1px solid;
+            border-radius: 0px;
+            border-color: $fg_color;
+            &:hover {
+                background-color: $hover_fg_color;
+                color: $fg_color;
+            }
+        }
+    }
+
+    &-categories-box {
+        padding: 8px;
+        background-color: $bg_color;
+        border: 1px solid;
+        border-radius: 0px;
+        border-color: $fg_color;
+    }
+
+    &-applications-inner-box,
+    &-applications-outer-box {
+        margin: 8px 8px 0 8px;
+    }
+
+    &-application-button {
+        padding: 8px;
+        color: $fg_color;
+        background-color: $bg_color;
+
+        // Used for newly installed applications
+        &:highlighted {
+            font-weight: bold;
+            color: $bg_color;
+            background-color: $selected_bg_color;
+        }
+
+        &-selected {
+            color: $bg_color;
+            background-color: $selected_bg_color;
+
+            &:highlighted {
+                font-weight: bold;
+            }
+        }
+
+        &-label:ltr {
+            padding-left: 8px;
+        }
+        &-label:rtl {
+            padding-right: 8px;
+        }
+    }
+
+    &-category-button {
+        padding: 8px;
+        color: $fg_color;
+        background-color: $bg_color;
+        
+        &-selected {
+            color: $bg_color;
+            background-color: $selected_bg_color;
+        }
+
+        &:hover {
+            background-color: $insensitive_bg_color;
+            color: $fg_color;
+        }
+
+        &-greyed {
+            color: $insensitive_fg_color;
+            background-color: $insensitive_bg_color;
+        }
+
+        &-label:ltr {
+            padding-left: 8px;
+        }
+        &-label:rtl {
+            padding-right: 8px;
+        }
+    }
+
+    &-selected-app-box {
+        padding-right: 32px;
+        padding-left: 24px;
+        text-align: right;
+        height: 2.2em;
+
+        &:rtl {
+            padding-top: 8px;
+            height: 2.2em;
+        }
+    }
+
+    &-selected-app-title {
+        font-weight: bold;
+    }
+
+    &-selected-app-description {
+        max-width: 150px;
+    }
+    
+    &-search-box {
+        padding: 8px;
+        background-color: $bg_color;
+        border: 1px solid;
+        border-radius: 0px;
+        border-color: $fg_color;
+        color: $fg_color;
+    }
+
+    &-search-box:ltr {
+        padding-left: 32px;
+    }
+    &-search-box:rtl {
+        padding-right: 32px;
+    }
+}
+
+#menu-search-entry {
+    width: 250px;
+    min-height: 16px;
+    font-weight: normal;
+    caret-color: $fg_color;
+
+    @extend %entry;
+}
+
+.menu-search-entry-icon {
+    icon-size: 1em;
+    color: $fg_color;
+}

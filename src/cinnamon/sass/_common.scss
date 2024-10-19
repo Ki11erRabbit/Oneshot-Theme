@@ -140,8 +140,8 @@ stage {
     padding: 8px;
     caret-color: $fg_color;
     caret-size: 1px;
-    selection-background-color: $selection_bg_color;
-    selected-color: $selection_fg_color;
+    selection-background-color: $selected_bg_color;
+    selected-color: $selected_fg_color;
     border: 1px solid;
     border-radius: 0px;
     border-color: $fg_color;
@@ -160,8 +160,8 @@ stage {
     padding: 8px;
     caret-color: $fg_color;
     caret-size: 1px;
-    selection-background-color: $selection_bg_color;
-    selected-color: $selection_fg_color;
+    selection-background-color: $selected_bg_color;
+    selected-color: $selected_fg_color;
     border: 1px solid;
     border-radius: 0px;
     border-color: $fg_color;

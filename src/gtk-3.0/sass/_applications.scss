@@ -6,10 +6,9 @@
 //
 
 .nemo-window {
-    .nemo-desktop {
-        background-color: $bg_color;
-        border-style: none;
-    }
+    -gtk-icon-style: regular;
+    -gtk-icon-theme: "oneshot_icons"
+
 
     .nemo-desktop.nemo-canvas-item {
         &:hover {
@@ -30,7 +29,7 @@
         }
     }
 
-    statusbar {
+    statusbar, .toolbar {
         border-color: $fg_color;
         border-width: 1px;
         border-style: solid;
@@ -79,12 +78,9 @@
             background-color: $bg_color;
 
             &.cell:selected {
-                color: $selected_fg_color;
+                //color: $selected_fg_color;
                 background-color: $selected_bg_color;
-                label {
-                    color: $fg_color;
-                    background-color: $bg_color;
-                }
+                color: $fg_color;
             }
 
             &.expander {

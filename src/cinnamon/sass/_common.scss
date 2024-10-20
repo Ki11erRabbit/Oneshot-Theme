@@ -614,6 +614,168 @@ StScrollBar {
 }
 
 //
+// Applets (applet.js)
+//
+.applet {
+    &-separator {
+        padding: 1px 4px;
+
+        &.vertical {
+          padding: 4px 1px;
+        }
+    }
+
+    &-separator-line {
+      width: 1px;
+      background: $fg_color;
+      
+      &.vertical {
+        height: 1px;
+        background: $fg_color;
+      }
+    }
+
+    &-box {
+      padding-left: 4px;
+      padding-right: 4px;
+      spacing: 4px;
+      color: $fg_color;
+      text-shadow: none;
+      transition-duration: 0;
+      text-align: left;
+      
+      &.vertical {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+      }
+      
+      &:hover {
+        color: $hover_fg_color;
+        background-color: $bg_color;
+      }
+      &:checked {
+        color: $bg_color;
+        background-color: $fg_color;
+      }
+
+      &:highlight {
+        color: $bg_color;
+        background-color: $fg_color;
+      }
+    }
+
+    &-label {
+      font-weight: bold;
+      color: $fg_color;
+
+      &:hover,
+      .applet-box:hover & {
+        color: $hover_fg_color;
+        background-color: $bg_color;
+      }
+      &:checked,
+      .applet-box:checked & {
+        color: $bg_color;
+        background-color: $fg_color;
+      }
+    }
+
+    &-icon {
+      color: $fg_color;
+      icon-size: 22px;
+
+      &:hover,
+      .applet-box:hover & {
+        color: $hover_fg_color;
+        background-color: $bg_color;
+        text-shadow: none;
+      }
+
+      &:checked,
+      .applet-box:checked & {
+        color: $bg_color;
+        background-color: $fg_color;
+        text-shadow: none;
+      }
+    }
+}
+
+//
+// Sound Applet (status/volume.js)
+//
+.sound-button {
+    width: 24px;
+    height: 12px;
+    padding: 8px;
+
+    @extend %button;
+    border: none
+
+    &-container {
+      padding-right: 4px;
+      padding-left: 4px;
+    }
+
+    StIcon {
+      icon-size: 1.4em;
+    }
+}
+
+.sound-track {
+  &-infos {
+    padding: 4px;
+  }
+  &-info {
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    StIcon {
+      icon-size: 16px;
+    }
+  }
+  &-box {
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 200px;
+  }
+}
+
+.sound-seek-box {
+  padding-left: 16px;
+
+  StLabel {
+    padding-top: 2px;
+  }
+  StIcon {
+    icon-size: 16px;
+  }
+}
+
+.sound-seek-slider {
+  width: 140px;
+}
+
+.sound-volume-menu-item {
+  padding: .4em 1.75em;
+
+  StIcon {
+    icon-size: 1.14em;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+.sound-playback-control {
+  padding: 4px 8px 8px 8px;
+}
+
+.sound-player {
+  //TODO
+}
+
+//
 // Window List (windowList.js)
 //
 .window-list {

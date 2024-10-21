@@ -703,6 +703,84 @@ StScrollBar {
 }
 
 //
+// Notifications
+//
+#notification {
+    box-shadow: none;
+    border: 1px solid;
+    border-radius: 0px;
+    border-color: $fg_color;
+    background-color: $bg_color;
+    color: $fg_color;
+    padding: 16px;
+    spacing-rows: 8px
+    spacing-columns: 8px
+    width: 34em;
+
+    .popup-menu & {
+        color: $fg_color;
+        border-color: $fg_color;
+
+        .notifcation-button, .notification-icon-button {
+            @extend %button;
+            padding: 8px;
+        }
+
+        StEntry {
+            @extend %entry;
+        }
+    }
+
+    &.multi-line-notification {
+        padding-bottom: 16px;
+        color: $fg_color;
+    }
+
+    &-scrollview {
+        max-height: 10em;
+
+        > .top-shadow, > .bottom-shadow {
+            height: 0;
+        }
+
+        &:ltr > StScrollBar {
+            padding-left: 8px;
+        }
+        &:rtl > StScrollBar {
+            padding-right: 8px;
+        }
+    }
+
+    &-body {
+        spacing: 4px;
+    }
+    &-actions {
+        spacing: 8px;
+    }
+}
+
+.notification { 
+
+    &-with-image {
+        min-height: 164px;
+        color: $fg_color;
+    }
+
+    &-button, &-icon-button {
+        @extend %button;
+        padding: 4px;
+    }
+
+    &-icon-button > StIcon {
+        icon-size: 32px;
+    }
+
+    StEntry {
+        @extend %osd_entry;
+    }
+}
+
+//
 // Sound Applet (status/volume.js)
 //
 .sound-button {

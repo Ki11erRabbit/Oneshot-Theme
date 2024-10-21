@@ -713,8 +713,8 @@ StScrollBar {
     background-color: $bg_color;
     color: $fg_color;
     padding: 16px;
-    spacing-rows: 8px
-    spacing-columns: 8px
+    spacing-rows: 8px;
+    spacing-columns: 8px;
     width: 34em;
 
     .popup-menu & {

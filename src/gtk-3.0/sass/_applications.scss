@@ -1,10 +1,113 @@
 
 
 
+
+//
+// Tab Overrides
+//
+GeditNotebook.notebook,
+ScratchMainWindow .notebook,
+EphyNotebook.notebook,
+MidoriNotebook .notebook,
+TerminalWindow .notebook,
+PantheonTerminalPantheonTerminalWindow .notebook {
+    border-color: $fg_color;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0px;
+    tab.reorderable-page.top, tab.top {
+        &:active, &.active-page {
+            background-color: $bg_color
+            color: $fg_color;
+            box-shadow: none;
+        }
+        &.active-page:hover {
+            border-color: $insensitive_fg_color;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 0px;
+            background-color: $insensitive_bg_color;
+            color: $insensitive_fg_color;
+            box-shadow: none;
+        }
+
+        &:hover {
+            border-color: $insensitive_fg_color;
+            background-color: $insensitive_bg_color;
+            color: $insensitive_fg_color;
+            box-shadow: none;
+        }
+
+    }
+}
+
+TerminalWindow .notebook,
+PantheonTerminalPantheonTerminalWindow .notebook {
+    tab.reorderable-page.top, tab.top {
+        padding-top: 8px;
+        border-top-width: 4px;
+    }
+
+    &.header.top {
+        box-shadow: none;
+    }
+}
+
+
+//
+// GNOME Terminal
+//
+vte-terminal.terminal-screen {
+    -TerminalScreen-background-darkness: 1.0;
+    background-color: $bg_color;
+    color: $fg_color;
+}
+
+terminal-screen-container,
+terminal-screen-container scollbar:not(slider) {
+    border-color: $fg_color;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0px;
+    background-color: $bg_color;
+}
+
+TerminalWindow {
+    .notebook {
+        tab .button {
+            color: $fg_color;
+
+            &:hover {
+                border-color: $insensitive_fg_color;
+                background-color: $insensitive_bg_color;
+                color: $fg_color;
+            }
+        }
+
+        .active-page, .prelight-page {
+            .button {
+                &:hover {
+                    border-color: $insensitive_fg_color;
+                    background-color: $insensitive_bg_color;
+                    color: $fg_color;
+                }
+                &:active {
+                    border-color: $selected_fg_color;
+                    background-color: $selected_bg_color;
+                    color: $fg_color;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
 //
 // Nemo
 //
-
 .nemo-window {
 
 
@@ -126,4 +229,16 @@
             color: $bg_color;
         }
     }
+}
+
+//
+// Cinnamon Settings
+//
+.cs-header {
+    padding: 8px;
+    background-color: $bg_color;
+    border-color: $fg_color;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0px;
 }

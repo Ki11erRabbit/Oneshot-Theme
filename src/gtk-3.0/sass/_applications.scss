@@ -135,7 +135,14 @@ TerminalWindow {
     }
 }
 
-
+//
+// MATE Terminal
+//
+vte-terminal {
+    -TerminalScreen-background-darkness: 1.0;
+    background-color: $bg_color;
+    color: $fg_color;
+}
 
 
 

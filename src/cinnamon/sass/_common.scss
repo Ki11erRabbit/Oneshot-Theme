@@ -1089,13 +1089,13 @@ StScrollBar {
         &:highlighted {
             padding: 8px;
             font-weight: bold;
-            color: $bg_color;
+            color: $fg_color;
             background-color: $selected_bg_color;
         }
 
         &-selected {
             padding: 8px;
-            color: $bg_color;
+            color: $fg_color;
             background-color: $selected_bg_color;
 
             &:highlighted {
@@ -1169,7 +1169,7 @@ StScrollBar {
         border: 1px solid;
         border-radius: 0px;
         border-color: $fg_color;
-        color: $bg_color;
+        color: $fg_color;
     }
 
     &-search-box:ltr {
@@ -1185,9 +1185,9 @@ StScrollBar {
     width: 250px;
     min-height: 16px;
     font-weight: normal;
-    caret-color: $fg_color;
+    caret-color: $bg_color;
     background-color: $bg_color;
-    color: $fg_color;
+    color: $bg_color;
 
 }
 

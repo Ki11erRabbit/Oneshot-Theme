@@ -17,7 +17,7 @@ PantheonTerminalPantheonTerminalWindow .notebook {
     border-radius: 0px;
     tab.reorderable-page.top, tab.top {
         &:active, &.active-page {
-            background-color: $bg_color
+            background-color: $bg_color;
             color: $fg_color;
             box-shadow: none;
         }

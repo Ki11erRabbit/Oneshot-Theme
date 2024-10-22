@@ -73,6 +73,40 @@ terminal-screen-container scollbar:not(slider) {
 }
 
 TerminalWindow {
+    .menubar {
+        -GtkWidget-window-dragging: true;
+        padding: 0;
+        background-color: $bg_color;
+        color: $fg_color;
+        border-color: $fg_color;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0px;
+
+        &.backdrop {
+            background-color: $bg_color;
+            color: $fg_color;
+        }
+
+        > menuitem {
+            padding: 4px 8px;
+            color: $fg_color;
+            
+            &:hover {
+                background-color: $hover_fg_color;
+                label {
+                    background-color: $bg_color;
+                    color: $fg_color;
+                }
+            }
+            &:disabled {
+                color: $insensitive_fg_color;
+                background-color: $bg_color;
+            }
+
+        }
+    }
+
     .notebook {
         tab .button {
             color: $fg_color;

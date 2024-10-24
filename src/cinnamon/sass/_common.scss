@@ -345,6 +345,129 @@ StScrollBar {
 //
 
 
+//
+// Notifications
+//
+#notification {
+    box-shadow: none;
+    border: 1px solid;
+    border-radius: 0px;
+    border-color: $fg_color;
+    background-color: $bg_color;
+    color: $fg_color;
+    padding: 16px;
+    spacing-rows: 8px;
+    spacing-columns: 8px;
+    width: 34em;
+
+    .popup-menu & {
+        color: $fg_color;
+        border-color: $fg_color;
+
+        .notifcation-button, .notification-icon-button {
+            @extend %button;
+            padding: 8px;
+        }
+
+        StEntry {
+            @extend %entry;
+        }
+    }
+
+    &.multi-line-notification {
+        padding-bottom: 16px;
+        color: $fg_color;
+    }
+
+    &-scrollview {
+        max-height: 10em;
+
+        > .top-shadow, > .bottom-shadow {
+            height: 0;
+        }
+
+        &:ltr > StScrollBar {
+            padding-left: 8px;
+        }
+        &:rtl > StScrollBar {
+            padding-right: 8px;
+        }
+    }
+
+    &-body {
+        spacing: 4px;
+    }
+    &-actions {
+        spacing: 8px;
+    }
+}
+
+.notification { 
+
+    &-with-image {
+        min-height: 164px;
+        color: $fg_color;
+    }
+
+    &-button, &-icon-button {
+        @extend %button;
+        padding: 4px;
+    }
+
+    &-icon-button > StIcon {
+        icon-size: 32px;
+    }
+
+    StEntry {
+        @extend %osd_entry;
+    }
+}
+
+
+//
+// Modal dialogs
+//
+.lightbox {
+    background-color: $bg_color;
+}
+.flashspot {
+    background-color: white;
+}
+
+.modal-dialog {
+    background-color: $bg_color;
+    border: 1px solid;
+    border-radius: 0px;
+    border-color: $fg_color;
+    padding: 4px 8px;
+
+    > StBoxLayout:first-child {
+        padding: 8px;
+    }
+    
+    &-button-box {
+        spacing: 0;
+        margin: 0;
+        padding: 8px;
+        border: none;
+        background-color: $bg_color;
+
+        .modal-dialog-button {
+            padding-top: 0;
+            padding-bottom: 0;
+            height: 32px;
+
+            @extend %button;
+        }
+    }
+
+    .confirm-dialo-title {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.3em;
+        padding-bottom: 12px;
+    }
+}
 
 
 //
@@ -756,82 +879,71 @@ StScrollBar {
 }
 
 //
-// Notifications
+// Desklets (desklet.js)
 //
-#notification {
-    box-shadow: none;
+.desklet {
+    color: $fg_color;
+
+    &:highlight {
+        color: $bg_color;
+        background-color: $insensitive_bg_color;
+    }
+
+    &-with-borders {
+        border: 1px solid;
+        border-radius: 0px;
+        border-color: $fg_color;
+        background-color: $bg_color;
+        color: $fg_color;
+        padding: 8px;
+
+        &:highlight {
+            color: $bg_color;
+            background-color: $insensitive_bg_color;
+        }
+    }
+    
+    &-with-borders-and-header {
+        border: 1px solid;
+        border-radius: 0px;
+        border-color: $fg_color;
+        background-color: $bg_color;
+        color: $fg_color;
+        padding: 8px;
+
+        &:highlight {
+            color: $bg_color;
+            background-color: $insensitive_bg_color;
+        }
+    }
+
+    &-header {
+        border: 1px solid;
+        border-radius: 0px;
+        border-color: $fg_color;
+        background-color: $bg_color;
+        color: $fg_color;
+        font-size: 1em;
+        padding: 12px;
+    }
+
+    &-drag-placeholder {
+        border: 1px solid;
+        border-radius: 0px;
+        border-color: $fg_color;
+        background-color: $insensitive_bg_color;
+    }
+}
+
+.photoframe-box {
     border: 1px solid;
     border-radius: 0px;
     border-color: $fg_color;
     background-color: $bg_color;
     color: $fg_color;
-    padding: 16px;
-    spacing-rows: 8px;
-    spacing-columns: 8px;
-    width: 34em;
-
-    .popup-menu & {
-        color: $fg_color;
-        border-color: $fg_color;
-
-        .notifcation-button, .notification-icon-button {
-            @extend %button;
-            padding: 8px;
-        }
-
-        StEntry {
-            @extend %entry;
-        }
-    }
-
-    &.multi-line-notification {
-        padding-bottom: 16px;
-        color: $fg_color;
-    }
-
-    &-scrollview {
-        max-height: 10em;
-
-        > .top-shadow, > .bottom-shadow {
-            height: 0;
-        }
-
-        &:ltr > StScrollBar {
-            padding-left: 8px;
-        }
-        &:rtl > StScrollBar {
-            padding-right: 8px;
-        }
-    }
-
-    &-body {
-        spacing: 4px;
-    }
-    &-actions {
-        spacing: 8px;
-    }
+    padding: 12px;
 }
 
-.notification { 
-
-    &-with-image {
-        min-height: 164px;
-        color: $fg_color;
-    }
-
-    &-button, &-icon-button {
-        @extend %button;
-        padding: 4px;
-    }
-
-    &-icon-button > StIcon {
-        icon-size: 32px;
-    }
-
-    StEntry {
-        @extend %osd_entry;
-    }
-}
 
 //
 // Sound Applet (status/volume.js)
@@ -1194,4 +1306,38 @@ StScrollBar {
 .menu-search-entry-icon {
     icon-size: 1em;
     color: $fg_color;
+}
+
+//
+// Tile Preview Applet
+//
+.tile-preview {
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+    border: 1px solid;
+    border-radius: 0px;
+    border-color: $selected_fg_color;
+
+    &.snap {
+        background-color: $selected_bg_color;
+    }
+}
+
+.tile-hud {
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+    border: 1px solid;
+    border-radius: 0px;
+    border-color: $selected_fg_color;
+
+    &.snap {
+        background-color: $selected_bg_color;
+    }
+}
+
+.xkcd-box {
+    padding: 8px;
+    border: 0px;
+    background-color: $bg_color;
+    border-radius: 0px;
 }
